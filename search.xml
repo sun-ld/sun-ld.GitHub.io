@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>Hello World</title>
+    <url>/posts/16107.html</url>
+    <content><![CDATA[<h2 id="Hello-Hexo"><a href="#Hello-Hexo" class="headerlink" title="Hello Hexo"></a>Hello Hexo</h2><blockquote>
+<p>学习使用Hexo+Next搭建博客网站，这是第一篇博客！<br>文章将有以下分类：工具、技术、笔记、思考、生活、阅读、音乐</p>
+</blockquote>
+<p><img data-src="/posts/16107/hello.jpg"></p>
+]]></content>
+      <categories>
+        <category>工具</category>
+      </categories>
+      <tags>
+        <tag>-博客 -Hexo</tag>
+      </tags>
+  </entry>
+</search>

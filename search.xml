@@ -1,18 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Hello World</title>
+    <title>Hello Hexo</title>
     <url>/posts/16107.html</url>
-    <content><![CDATA[<h2 id="Hello-Hexo"><a href="#Hello-Hexo" class="headerlink" title="Hello Hexo"></a>Hello Hexo</h2><blockquote>
-<p>学习使用Hexo+Next搭建博客网站，这是第一篇博客！<br>文章将有以下分类：工具、技术、笔记、思考、生活、阅读、音乐</p>
+    <content><![CDATA[<blockquote>
+<p>学习使用Hexo+Next搭建博客网站，这是第一篇博客！<br>文章将有以下分类：工具、技术、笔记、思考、生活、阅读、音乐。</p>
 </blockquote>
-<p><img data-src="/posts/16107/hello.jpg"></p>
 ]]></content>
       <categories>
         <category>工具</category>
       </categories>
       <tags>
         <tag>-博客 -Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>搭建自己的个人博客网站(Github+Hexo+Next)</title>
+    <url>/posts/10121.html</url>
+    <content><![CDATA[<blockquote>
+<p>Hexo博客搭建及主题美化，来自<a href="https://yuumiy.github.io/posts/2789.html">岛田悠米的博客。</a></p>
+</blockquote>
+<p><img data-src="/posts/10121/hello.jpg"></p>
+]]></content>
+      <categories>
+        <category>工具</category>
+      </categories>
+      <tags>
+        <tag>-博客 -Hexo -Git</tag>
       </tags>
   </entry>
 </search>

@@ -62,6 +62,7 @@
 <p>对堆进行插入操作时，先将新节点放在堆的末端，再对这个新节点执行向上调整操作。<br>下面是堆的向上调整算法</p>
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">AdjustUp</span><span class="params">(<span class="keyword">int</span> nums[], inr k)</span> </span>&#123;</span><br><span class="line"><span class="comment">// 参数k为向上调整的节点，也为堆的元素个数</span></span><br><span class="line">    nums[<span class="number">0</span>] = nums[k];</span><br><span class="line">    <span class="keyword">int</span> i = k/<span class="number">2</span>;</span><br><span class="line">    <span class="keyword">while</span>(i&gt;<span class="number">0</span> &amp;&amp; nums[i]&lt;nums[<span class="number">0</span>]) &#123;</span><br><span class="line">        nums[k] = nums[i];</span><br><span class="line">        k = i;</span><br><span class="line">        i = i/<span class="number">2</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    nums[k] = nums[<span class="number">0</span>];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><strong>时间复杂度</strong>: 建堆时间复杂度O(n)，每次调整时间复杂度O(h)，故在最好、最坏和平均情况下堆排序时间复杂度为O(nlogn)<br><strong>空间复杂度</strong>: O(1)<br><strong>稳定性</strong>：不稳定</p>
+<h1 id="归并排序"><a href="#归并排序" class="headerlink" title="归并排序"></a>归并排序</h1><p>递归形式的2路归并排序算法</p>
 ]]></content>
       <categories>
         <category>笔记</category>

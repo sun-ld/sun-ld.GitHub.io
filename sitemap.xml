@@ -119,4 +119,11 @@
     <priority>0.2</priority>
   </url>
   
+  <url>
+    <loc>https://sun-ld.github.io/categories/%E7%AC%94%E8%AE%B0/%E4%BA%BA%E6%96%87/</loc>
+    <lastmod>2022-02-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
 </urlset>

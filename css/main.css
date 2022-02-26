@@ -1265,7 +1265,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #ff45ff;
+  background: #3ea494;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2778,12 +2778,10 @@ span.exturl:hover {
 .headband {
   display: none;
 }
-/* webkit, opera, IE9 */
 ::selection {
   background: #00c4b6;
   color: #f7f7f7;
 }
-/* firefox */
 ::-moz-selection {
   background: #00c4b6;
   color: #f7f7f7;

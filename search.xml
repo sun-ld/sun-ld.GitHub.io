@@ -9,9 +9,10 @@
 ]]></content>
       <categories>
         <category>工具</category>
+        <category>Hexo</category>
       </categories>
       <tags>
-        <tag>-博客 -Hexo</tag>
+        <tag>Hexo</tag>
       </tags>
   </entry>
   <entry>
@@ -23,9 +24,10 @@
 ]]></content>
       <categories>
         <category>工具</category>
+        <category>Hexo</category>
       </categories>
       <tags>
-        <tag>-博客 -Hexo</tag>
+        <tag>Hexo</tag>
       </tags>
   </entry>
   <entry>
@@ -80,7 +82,8 @@
 </blockquote>
 ]]></content>
       <categories>
-        <category>笔记</category>
+        <category>算法</category>
+        <category>排序</category>
       </categories>
       <tags>
         <tag>算法</tag>
@@ -111,10 +114,10 @@
 ]]></content>
       <categories>
         <category>笔记</category>
-        <category>人文</category>
+        <category>哲学/历史</category>
       </categories>
       <tags>
-        <tag>人文</tag>
+        <tag>哲学/历史</tag>
       </tags>
   </entry>
 </search>

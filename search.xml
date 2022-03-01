@@ -6,6 +6,8 @@
     <content><![CDATA[<blockquote>
 <p>学习使用Hexo+Next搭建博客网站，这是第一篇博客！<br>文章将有以下分类：工具、技术、笔记、思考、生活、阅读、音乐。</p>
 </blockquote>
+<span id="more"></span>
+
 <blockquote>
 <p>位我上者，灿烂星空；道德律令，在我心中。</p>
 </blockquote>
@@ -232,6 +234,26 @@
       </categories>
       <tags>
         <tag>算法</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>罗大佑</title>
+    <url>/posts/47257.html</url>
+    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><blockquote>
+<p>分享一下华语流行乐教父——罗大佑的那些不朽的作品</p>
+</blockquote>
+<span id="more"></span>
+
+<blockquote>
+<p>位我上者，灿烂星空；道德律令，在我心中。</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>音乐</category>
+        <category>罗大佑</category>
+      </categories>
+      <tags>
+        <tag>音乐</tag>
       </tags>
   </entry>
 </search>

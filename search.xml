@@ -198,6 +198,9 @@
 <h1 id="后序遍历"><a href="#后序遍历" class="headerlink" title="后序遍历"></a>后序遍历</h1><h2 id="递归遍历方法-2"><a href="#递归遍历方法-2" class="headerlink" title="递归遍历方法"></a>递归遍历方法</h2><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">PostOrder</span><span class="params">(TreeNode* node)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(node == <span class="literal">nullptr</span>)</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">PostOrder</span>(node-&gt;left);</span><br><span class="line">    <span class="built_in">PostOrder</span>(node-&gt;right);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d &quot;</span>, node-&gt;val);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="非递归遍历方法-2"><a href="#非递归遍历方法-2" class="headerlink" title="非递归遍历方法"></a>非递归遍历方法</h2><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">PostOrder</span><span class="params">(TreeNode* node)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(node == <span class="literal">nullptr</span>)</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    </span><br><span class="line">    stack&lt;TreeNode*&gt; stk1, stk2;</span><br><span class="line">    stk1.<span class="built_in">push</span>(node);</span><br><span class="line">    <span class="keyword">while</span>(!stk1.<span class="built_in">empty</span>()) &#123;</span><br><span class="line">        TreeNode *p = stk1.<span class="built_in">top</span>();</span><br><span class="line">        stk1.<span class="built_in">pop</span>();</span><br><span class="line">        </span><br><span class="line">        stk2.<span class="built_in">push</span>(p);</span><br><span class="line">        <span class="keyword">if</span>(p-&gt;left)</span><br><span class="line">            stk1.<span class="built_in">push</span>(p-&gt;left);</span><br><span class="line">        <span class="keyword">if</span>(p-&gt;right)</span><br><span class="line">            stk1.<span class="built_in">push</span>(p-&gt;right);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">while</span>(!stk2.<span class="built_in">empty</span>()) &#123;</span><br><span class="line">        TreeNode *p = stk2.<span class="built_in">top</span>();</span><br><span class="line">        stk2.<span class="built_in">pop</span>();</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d &quot;</span>, p-&gt;val);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h1 id="层序遍历"><a href="#层序遍历" class="headerlink" title="层序遍历"></a>层序遍历</h1><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">LevelOrder</span><span class="params">(TreeNode* root)</span> </span>&#123;</span><br><span class="line">    queue&lt;TreeNode*&gt; q;</span><br><span class="line">    q.<span class="built_in">push</span>(root);</span><br><span class="line">    <span class="keyword">while</span>(!q.<span class="built_in">empty</span>()) &#123;</span><br><span class="line">        TreeNode *p = q.<span class="built_in">front</span>();</span><br><span class="line">        q.<span class="built_in">pop</span>();</span><br><span class="line"></span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d &quot;</span>, p-&gt;val);</span><br><span class="line">        <span class="keyword">if</span>(p-&gt;left) </span><br><span class="line">            q.<span class="built_in">push</span>(p-&gt;left);</span><br><span class="line">        <span class="keyword">if</span>(p-&gt;right)</span><br><span class="line">            q.<span class="built_in">push</span>(p-&gt;right);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;hezo</span><br></pre></td></tr></table></figure>
+
+<!-- # 线索化二叉树 -->
+
 <blockquote>
 <p>位我上者，灿烂星空；道德律令，在我心中。</p>
 </blockquote>
@@ -237,7 +240,7 @@
       </tags>
   </entry>
   <entry>
-    <title>罗大佑</title>
+    <title>现代诗一般的歌词</title>
     <url>/posts/47257.html</url>
     <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><blockquote>
 <p>分享一下华语流行乐教父——罗大佑的那些不朽的作品</p>
@@ -251,7 +254,7 @@
 <p>我将真心付给了你<br>将悲伤留给我自己<br>我将青春付给了你<br>将岁月留给我自己<br>我将生命付给了你<br>将孤独留给我自己<br>我将春天付给了你<br>将冬天留给我自己<br><br>爱是没有人能了解的东西<br>爱是永恒的旋律<br>爱是欢笑泪珠飘落的过程<br>爱曾经是我也是你</p>
 </blockquote>
 <h1 id="恋曲1990"><a href="#恋曲1990" class="headerlink" title="恋曲1990"></a>恋曲1990</h1><blockquote>
-<p>乌溜溜的黑眼珠和你的笑脸<br>怎么也难忘记你容颜的转变<br>轻飘飘的旧时光就这么溜走<br>转头回去看看时已匆匆数年<br>苍茫茫的天涯路是你的飘泊<br>寻寻觅觅长相守是我的脚步<br>黑漆漆的孤枕边是你的温柔<br>醒来时的清晨里是我的哀愁<br>或许明日太阳西下倦鸟已归时<br>你将已经踏上旧时的归途<br>人生难得再次寻觅相知的伴侣<br>生命终究难舍蓝蓝的白云天<br>轰隆隆的雷雨声在我的窗前<br>怎么也难忘记你离去的转变<br>孤单单的身影后寂寥的心情<br>永远无怨的是我的双眼</p>
+<p>乌溜溜的黑眼珠<br>和你的笑脸<br>怎么也难忘记你<br>容颜的转变<br>轻飘飘的旧时光<br>就这么溜走<br>转头回去看看时<br>已匆匆数年<br>苍茫茫的天涯路<br>是你的飘泊<br>寻寻觅觅长相守<br>是我的脚步<br>黑漆漆的孤枕边<br>是你的温柔<br>醒来时的清晨里<br>是我的哀愁<br>或许明日太阳西下<br>倦鸟已归时<br>你将已经踏上<br>旧时的归途<br>人生难得再次寻觅<br>相知的伴侣<br>生命终究难舍<br>蓝蓝的白云天<br>轰隆隆的雷雨声<br>在我的窗前<br>怎么也难忘记你<br>离去的转变<br>孤单单的身影后<br>寂寥的心情<br>永远无怨的<br>是我的双眼</p>
 </blockquote>
 <h1 id="光阴的故事"><a href="#光阴的故事" class="headerlink" title="光阴的故事"></a>光阴的故事</h1><blockquote>
 <p>春天的花开秋天的风<br>以及冬天的落阳<br>忧郁的青春年少的我<br>曾经无知的这么想<br>风车在四季轮回的歌里<br>它天天地流转<br>风花雪月的诗句里<br>我在年年的成长<br>流水它带走光阴的故事<br>改变了一个人<br>就在那多愁善感而初次<br>等待的青春<br>发黄的相片古老的信<br>以及褪色的圣诞卡<br>年轻时为你写的歌<br>恐怕你早已忘了吧<br>过去的誓言就象那课本里<br>缤纷的书签<br>刻划着多少美丽的诗<br>可是终究是一阵烟<br>流水它带走光阴的故事<br>改变了两个人<br>就在那多愁善感而初次<br>流泪的青春<br>遥远的路程昨日的梦<br>以及远去的笑声<br>再次的见面我们又历经了<br>多少的路程<br>不再是旧日熟悉的我<br>有着旧日狂热的梦<br>也不是旧日熟悉的你<br>有着依然的笑容<br>流水它带走光阴的故事<br>改变了我们<br>就在那多愁善感而初次<br>回忆的青春</p>
@@ -272,7 +275,7 @@
 <p>眼看着高楼盖得越来越高<br>我们的人情味却越来越薄<br>朋友之间越来越有礼貌<br>只因为大家见面越来越少<br>苹果价钱卖得没以前高<br>或许现在味道变得不好<br>就像彩色的电视变得更加花俏<br>能辨别黑白的人越来越少<br><br>是个什么样的心理因素<br>每年要吃掉一条高速公路<br>在西门町（台北）的天桥上面闲逛<br>有多少文明人在人行道上<br>就像我看到文明车辆横冲直撞<br>我不懂大家心中作何感想<br>一年过了又是新的一年<br>每一年现代都在传统边缘<br>在每个新的一年三百六十五天<br>我们都每天进步一点点</p>
 </blockquote>
 <h1 id="稻草人"><a href="#稻草人" class="headerlink" title="稻草人"></a>稻草人</h1><blockquote>
-<p>终日面对着青山<br>终日面对着稻浪<br>午后的云雀背着艳阳<br>那样飞<br>那样笑<br>那样歌唱<br>轻风吹在我身上<br>雨珠打在我脸上<br>午后的牛羊凝向远方<br>彩虹画出的希望<br>蓝蓝的青空在上<br>却有着云雀与彩虹的梦<br>多像不知足的云四处飘荡<br>何处是我的归宿<br>是否在天际的那一端<br>奇怪着稻草的身躯如何飞翔<br>终日面对着青山<br>终日面对着稻浪<br>晨光<br>露珠<br>夕阳<br>星辰<br>春耕<br>秋收<br>冬藏</p>
+<p>终日面对着青山<br>终日面对着稻浪<br>午后的云雀背着艳阳<br>那样飞<br>那样笑<br>那样歌唱<br>轻风吹在我身上<br>雨珠打在我脸上<br>午后的牛羊凝向远方<br>彩虹画出的希望<br><br>蓝蓝的青空在上<br>却有着云雀与彩虹的梦<br>多像不知足的云四处飘荡<br>何处是我的归宿<br>是否在天际的那一端<br>奇怪着稻草的身躯如何飞翔<br><br>终日面对着青山<br>终日面对着稻浪<br>晨光<br>露珠<br>夕阳<br>星辰<br>春耕<br>秋收<br>冬藏</p>
 </blockquote>
 <h1 id="牧童"><a href="#牧童" class="headerlink" title="牧童"></a>牧童</h1><blockquote>
 <p>牛背上的牧童<br>敞开你的胸扉<br>三月的苍茫<br>掩不住你树影下菊色的梦<br>风在林梢叹息<br>云在碧空飘逸<br>你冷漠的笛声<br>掠过青草带来泥土的芳香<br>九月的诗<br>早已埋藏在风雪之中<br>为何我听到<br>你胸口里热血汹涌<br>你看那<br>千古的泉水在山谷回旋<br>可知道<br>青鸟在树林呼唤你<br>牧童<br>田园已经荒芜<br>斜阳依然孤独<br>且让你的冷漠<br>投影在那泼墨残痕的归途</p>
@@ -287,6 +290,28 @@
       </categories>
       <tags>
         <tag>音乐</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>线索化二叉树</title>
+    <url>/posts/45955.html</url>
+    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><blockquote>
+<p>总结一下先序、中序和后序线索化二叉树</p>
+</blockquote>
+<span id="more"></span>
+<h1 id="中序线索化二叉树"><a href="#中序线索化二叉树" class="headerlink" title="中序线索化二叉树"></a>中序线索化二叉树</h1><h2 id="线索二叉树结构"><a href="#线索二叉树结构" class="headerlink" title="线索二叉树结构"></a>线索二叉树结构</h2><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">ThreadNode</span> &#123;</span></span><br><span class="line">    <span class="keyword">int</span> data;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">ThreadNode</span> *<span class="title">lchild</span>, *<span class="title">rchild</span>;</span></span><br><span class="line">    <span class="keyword">int</span> ltag, rtag; <span class="comment">// 左、右线索标志：0：孩子；1：前驱</span></span><br><span class="line">&#125;ThreadNode, *ThreadTree;</span><br></pre></td></tr></table></figure>
+
+<h2 id="中序线索化"><a href="#中序线索化" class="headerlink" title="中序线索化"></a>中序线索化</h2><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">InThread</span><span class="params">(TreeTree&amp; p, ThreadTree&amp; pre)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 线索化左子树</span></span><br><span class="line">    <span class="built_in">InThread</span>(p-&gt;lchild, pre);  </span><br><span class="line">    <span class="comment">// 左子树为空，建立前驱索引</span></span><br><span class="line">    <span class="keyword">if</span>(p-&gt;lchild == <span class="literal">nullptr</span>) &#123;</span><br><span class="line">        p-&gt;lchild = pre;</span><br><span class="line">        p-&gt;ltag = <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 建立前驱索引的后继索引</span></span><br><span class="line">    <span class="keyword">if</span>(pre != <span class="literal">nullptr</span> &amp;&amp; pre-&gt;rchild==<span class="literal">nullptr</span>) &#123;</span><br><span class="line">        pre-&gt;rchild = p;   </span><br><span class="line">        pre-&gt;rtag = <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 标记当前节点为刚访问过得节点</span></span><br><span class="line">    pre = p;  </span><br><span class="line">    <span class="comment">// 线索化右子树</span></span><br><span class="line">    <span class="built_in">InThread</span>(p-&gt;rchild, pre);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="建立线索化二叉树"><a href="#建立线索化二叉树" class="headerlink" title="建立线索化二叉树"></a>建立线索化二叉树</h2><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">CreateInThread</span><span class="params">(ThreadTree T)</span> </span>&#123;</span><br><span class="line">    ThreadTree pre = <span class="literal">nullptr</span>;</span><br><span class="line">    <span class="keyword">if</span>(T != <span class="literal">nullptr</span>) &#123;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>数据结构</category>
+        <category>二叉树</category>
+      </categories>
+      <tags>
+        <tag>数据结构</tag>
       </tags>
   </entry>
 </search>

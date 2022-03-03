@@ -142,6 +142,7 @@
     <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><blockquote>
 <p>刷过leetcode的小伙伴肯定对滑动窗口算法很熟悉，这篇文章就来总结一下滑动窗口的套路。附带四道leetcode滑动窗口题目题解^.^</p>
 </blockquote>
+<p><img data-src="/posts/39893/hello.jpg"></p>
 <span id="more"></span>
 
 <h1 id="算法模板框架"><a href="#算法模板框架" class="headerlink" title="算法模板框架"></a>算法模板框架</h1><blockquote>

@@ -141,7 +141,6 @@
     <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><blockquote>
 <p>刷过leetcode的小伙伴肯定对滑动窗口算法很熟悉，这篇文章就来总结一下滑动窗口的套路。附带四道leetcode滑动窗口题目题解^.^</p>
 </blockquote>
-<p><img data-src="/posts/39893/hello.jpg"></p>
 <span id="more"></span>
 
 <h1 id="算法模板框架"><a href="#算法模板框架" class="headerlink" title="算法模板框架"></a>算法模板框架</h1><blockquote>
@@ -298,6 +297,7 @@
     <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><blockquote>
 <p>总结一下先序、中序和后序线索化二叉树</p>
 </blockquote>
+<p><img data-src="/posts/45955/hello.jpg"></p>
 <span id="more"></span>
 <h1 id="线索二叉树结构"><a href="#线索二叉树结构" class="headerlink" title="线索二叉树结构"></a>线索二叉树结构</h1><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">ThreadNode</span> &#123;</span></span><br><span class="line">    <span class="keyword">int</span> data;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">ThreadNode</span> *<span class="title">lchild</span>, *<span class="title">rchild</span>;</span></span><br><span class="line">    <span class="keyword">int</span> ltag, rtag; <span class="comment">// 左、右线索标志：0：孩子；1：前驱</span></span><br><span class="line">    <span class="built_in">ThreadNode</span>(<span class="keyword">int</span> x) : <span class="built_in">data</span>(x), <span class="built_in">lchild</span>(<span class="literal">nullptr</span>), <span class="built_in">rchild</span>(<span class="literal">nullptr</span>), <span class="built_in">ltag</span>(<span class="number">0</span>), <span class="built_in">rtag</span>(<span class="number">0</span>) &#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> ThreadNode* ThreadTree;</span><br></pre></td></tr></table></figure>
 

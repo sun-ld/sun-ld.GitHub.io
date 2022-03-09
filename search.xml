@@ -56,6 +56,7 @@
     <content><![CDATA[<blockquote>
 <p>Hexo博客搭建及主题美化，来自<a href="https://yuumiy.github.io/posts/2789.html">岛田悠米的博客。</a></p>
 </blockquote>
+<p><img data-src="/posts/10121/hello.jpg"></p>
 <span id="more"></span>
 
 <blockquote>
@@ -170,9 +171,6 @@
 </blockquote>
 <h2 id="爱的箴言"><a href="#爱的箴言" class="headerlink" title="爱的箴言"></a>爱的箴言</h2><blockquote>
 <p>我将真心付给了你<br>将悲伤留给我自己<br>我将青春付给了你<br>将岁月留给我自己<br>我将生命付给了你<br>将孤独留给我自己<br>我将春天付给了你<br>将冬天留给我自己<br><br>爱是没有人能了解的东西<br>爱是永恒的旋律<br>爱是欢笑泪珠飘落的过程<br>爱曾经是我也是你</p>
-</blockquote>
-<h2 id="未来的主人翁"><a href="#未来的主人翁" class="headerlink" title="未来的主人翁"></a>未来的主人翁</h2><blockquote>
-<p>我们不要一个<br>被科学游戏污染的天空<br>我们不要一个<br>被现实生活超越的时空<br>我们不要一个<br>越来越远模糊的地平线<br>我们不要一个<br>越来越近沉默的春天<br>我们不要被你们发明变成<br>电脑儿童<br>我们不要被你们忘怀变成<br>钥匙儿童</p>
 </blockquote>
 <h2 id="光阴的故事"><a href="#光阴的故事" class="headerlink" title="光阴的故事"></a>光阴的故事</h2><blockquote>
 <p>春天的花开秋天的风<br>以及冬天的落阳<br>忧郁的青春年少的我<br>曾经无知的这么想<br>风车在四季轮回的歌里<br>它天天地流转<br>风花雪月的诗句里<br>我在年年的成长<br>流水它带走光阴的故事<br>改变了一个人<br>就在那多愁善感而初次<br>等待的青春<br>发黄的相片古老的信<br>以及褪色的圣诞卡<br>年轻时为你写的歌<br>恐怕你早已忘了吧<br>过去的誓言就象那课本里<br>缤纷的书签<br>刻划着多少美丽的诗<br>可是终究是一阵烟<br>流水它带走光阴的故事<br>改变了两个人<br>就在那多愁善感而初次<br>流泪的青春<br>遥远的路程昨日的梦<br>以及远去的笑声<br>再次的见面我们又历经了<br>多少的路程<br>不再是旧日熟悉的我<br>有着旧日狂热的梦<br>也不是旧日熟悉的你<br>有着依然的笑容<br>流水它带走光阴的故事<br>改变了我们<br>就在那多愁善感而初次<br>回忆的青春</p>
@@ -303,7 +301,6 @@
     <content><![CDATA[<blockquote>
 <p>刷过leetcode的小伙伴肯定对滑动窗口算法很熟悉。<br>滑动窗口是一种很精妙、面试也常考的算法。这篇文章就来总结一下滑动窗口的套路。附带四道leetcode滑动窗口题目题解^.^</p>
 </blockquote>
-<p><img data-src="/posts/39893/hello.jpg"></p>
 <span id="more"></span>
 
 <h2 id="算法模板框架"><a href="#算法模板框架" class="headerlink" title="算法模板框架"></a>算法模板框架</h2><blockquote>

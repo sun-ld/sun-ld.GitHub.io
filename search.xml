@@ -400,6 +400,35 @@
       </tags>
   </entry>
   <entry>
+    <title>Leetcode链表题目总结</title>
+    <url>/posts/6854.html</url>
+    <content><![CDATA[<blockquote>
+<p>链表是一种很重要的数据结构。涉及指针操作，思路往往很巧妙，代码短小精悍，很适合拿来在面试的时候考察，本文就来总结一下Leetcode链表相关的经典题目~</p>
+</blockquote>
+<span id="more"></span>
+
+<h2 id="链表结构定义"><a href="#链表结构定义" class="headerlink" title="链表结构定义"></a>链表结构定义</h2><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"> <span class="comment">// Definition for singly-linked list.</span></span><br><span class="line"> <span class="class"><span class="keyword">struct</span> <span class="title">ListNode</span> &#123;</span></span><br><span class="line">    <span class="keyword">int</span> val;</span><br><span class="line">    ListNode *next;</span><br><span class="line">    <span class="built_in">ListNode</span>() : <span class="built_in">val</span>(<span class="number">0</span>), <span class="built_in">next</span>(<span class="literal">nullptr</span>) &#123;&#125;</span><br><span class="line">    <span class="built_in">ListNode</span>(<span class="keyword">int</span> x) : <span class="built_in">val</span>(x), <span class="built_in">next</span>(<span class="literal">nullptr</span>) &#123;&#125;</span><br><span class="line">    <span class="built_in">ListNode</span>(<span class="keyword">int</span> x, ListNode *next) : <span class="built_in">val</span>(x), <span class="built_in">next</span>(next) &#123;&#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h2 id="206-反转链表"><a href="#206-反转链表" class="headerlink" title="206. 反转链表"></a><a href="https://leetcode-cn.com/problems/reverse-linked-list/">206. 反转链表</a></h2><blockquote>
+<p>给你单链表的头节点 head ，请你反转链表，并返回反转后的链表。<br>本题有两种解决思路，一种递归一种迭代，思路都很精巧，下面来一一介绍：</p>
+</blockquote>
+<h3 id="1、递归解法"><a href="#1、递归解法" class="headerlink" title="1、递归解法"></a>1、递归解法</h3><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"> <span class="function">ListNode* <span class="title">reverseList</span><span class="params">(ListNode* head)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 链表为空；head指向尾结点</span></span><br><span class="line">    <span class="keyword">if</span>(head==<span class="literal">nullptr</span> || head-&gt;next==<span class="literal">nullptr</span>)</span><br><span class="line">        <span class="keyword">return</span> head;</span><br><span class="line">    </span><br><span class="line">    ListNode *newHead = <span class="built_in">reverseList</span>(head-&gt;next);</span><br><span class="line">    head-&gt;next-&gt;next = head;</span><br><span class="line">    head-&gt;next = <span class="literal">nullptr</span></span><br><span class="line">    <span class="keyword">return</span> newHead;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="2、迭代解法"><a href="#2、迭代解法" class="headerlink" title="2、迭代解法"></a>2、迭代解法</h3><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function">ListNode* <span class="title">reverseList</span><span class="params">(ListNode* head)</span> </span>&#123;</span><br><span class="line">    ListNode *dummy = <span class="built_in">ListNode</span>(<span class="number">-1</span>);</span><br><span class="line">    dummy-&gt;next = <span class="literal">nullptr</span>;</span><br><span class="line"></span><br><span class="line">    ListNode *cur = head;</span><br><span class="line">    <span class="keyword">while</span>(head != <span class="literal">nullptr</span>) &#123;</span><br><span class="line">        ListNode *_next = cur-&gt;next;</span><br><span class="line">        cur-&gt;next = dummy-&gt;next;</span><br><span class="line">        dummy-&gt;next = cur;</span><br><span class="line">        cur = _next;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> dummy-&gt;next;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>位我上者，灿烂星空；道德律令，在我心中。</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>leetcode</category>
+        <category>链表</category>
+      </categories>
+      <tags>
+        <tag>链表</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>LRU和LFU缓存</title>
     <url>/posts/13455.html</url>
     <content><![CDATA[<blockquote>
@@ -427,35 +456,6 @@
       </categories>
       <tags>
         <tag>LRU</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Leetcode链表题目总结</title>
-    <url>/posts/6854.html</url>
-    <content><![CDATA[<blockquote>
-<p>链表是一种很重要的数据结构。涉及指针操作，思路往往很巧妙，代码短小精悍，很适合拿来在面试的时候考察，本文就来总结一下Leetcode链表相关的经典题目~</p>
-</blockquote>
-<span id="more"></span>
-
-<h2 id="链表结构定义"><a href="#链表结构定义" class="headerlink" title="链表结构定义"></a>链表结构定义</h2><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"> <span class="comment">// Definition for singly-linked list.</span></span><br><span class="line"> <span class="class"><span class="keyword">struct</span> <span class="title">ListNode</span> &#123;</span></span><br><span class="line">    <span class="keyword">int</span> val;</span><br><span class="line">    ListNode *next;</span><br><span class="line">    <span class="built_in">ListNode</span>() : <span class="built_in">val</span>(<span class="number">0</span>), <span class="built_in">next</span>(<span class="literal">nullptr</span>) &#123;&#125;</span><br><span class="line">    <span class="built_in">ListNode</span>(<span class="keyword">int</span> x) : <span class="built_in">val</span>(x), <span class="built_in">next</span>(<span class="literal">nullptr</span>) &#123;&#125;</span><br><span class="line">    <span class="built_in">ListNode</span>(<span class="keyword">int</span> x, ListNode *next) : <span class="built_in">val</span>(x), <span class="built_in">next</span>(next) &#123;&#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<h2 id="206-反转链表"><a href="#206-反转链表" class="headerlink" title="206. 反转链表"></a><a href="https://leetcode-cn.com/problems/reverse-linked-list/">206. 反转链表</a></h2><blockquote>
-<p>给你单链表的头节点 head ，请你反转链表，并返回反转后的链表。<br>本题有两种解决思路，一种递归一种迭代，思路都很精巧，下面来一一介绍：</p>
-</blockquote>
-<h3 id="1、递归解法"><a href="#1、递归解法" class="headerlink" title="1、递归解法"></a>1、递归解法</h3><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"> <span class="function">ListNode* <span class="title">reverseList</span><span class="params">(ListNode* head)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 链表为空；head指向尾结点</span></span><br><span class="line">    <span class="keyword">if</span>(head==<span class="literal">nullptr</span> || head-&gt;next==<span class="literal">nullptr</span>)</span><br><span class="line">        <span class="keyword">return</span> head;</span><br><span class="line">    </span><br><span class="line">    ListNode *newHead = <span class="built_in">reverseList</span>(head-&gt;next);</span><br><span class="line">    head-&gt;next-&gt;next = head;</span><br><span class="line">    head-&gt;next = <span class="literal">nullptr</span></span><br><span class="line">    <span class="keyword">return</span> newHead;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="2、迭代解法"><a href="#2、迭代解法" class="headerlink" title="2、迭代解法"></a>2、迭代解法</h3><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function">ListNode* <span class="title">reverseList</span><span class="params">(ListNode* head)</span> </span>&#123;</span><br><span class="line">    ListNode *dummy = <span class="built_in">ListNode</span>(<span class="number">-1</span>);</span><br><span class="line">    dummy-&gt;next = <span class="literal">nullptr</span>;</span><br><span class="line"></span><br><span class="line">    ListNode *cur = head;</span><br><span class="line">    <span class="keyword">while</span>(head != <span class="literal">nullptr</span>) &#123;</span><br><span class="line">        ListNode *_next = cur-&gt;next;</span><br><span class="line">        cur-&gt;next = dummy-&gt;next;</span><br><span class="line">        dummy-&gt;next = cur;</span><br><span class="line">        cur = _next;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> dummy-&gt;next;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>位我上者，灿烂星空；道德律令，在我心中。</p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>leetcode</category>
-        <category>链表</category>
-      </categories>
-      <tags>
-        <tag>链表</tag>
       </tags>
   </entry>
 </search>

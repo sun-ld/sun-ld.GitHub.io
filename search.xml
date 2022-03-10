@@ -1,6 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Hello Hexo</title>
+    <url>/posts/16107.html</url>
+    <content><![CDATA[<blockquote>
+<p>学习使用Hexo+Next搭建博客网站，这是第一篇博客！<br>文章将有以下分类：工具、技术、笔记、思考、生活、阅读、音乐。</p>
+</blockquote>
+<span id="more"></span>
+
+<blockquote>
+<p>位我上者，灿烂星空；道德律令，在我心中。</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>工具</category>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>二叉树的遍历</title>
     <url>/posts/12682.html</url>
     <content><![CDATA[<blockquote>
@@ -28,26 +48,6 @@
       </categories>
       <tags>
         <tag>数据结构</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hello Hexo</title>
-    <url>/posts/16107.html</url>
-    <content><![CDATA[<blockquote>
-<p>学习使用Hexo+Next搭建博客网站，这是第一篇博客！<br>文章将有以下分类：工具、技术、笔记、思考、生活、阅读、音乐。</p>
-</blockquote>
-<span id="more"></span>
-
-<blockquote>
-<p>位我上者，灿烂星空；道德律令，在我心中。</p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>工具</category>
-        <category>Hexo</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
       </tags>
   </entry>
   <entry>
@@ -243,6 +243,51 @@
       </tags>
   </entry>
   <entry>
+    <title>滑动窗口算法总结</title>
+    <url>/posts/39893.html</url>
+    <content><![CDATA[<blockquote>
+<p>刷过leetcode的小伙伴肯定对滑动窗口算法很熟悉。<br>滑动窗口是一种很精妙、面试也常考的算法。这篇文章就来总结一下滑动窗口的套路。附带四道leetcode滑动窗口题目题解^.^</p>
+</blockquote>
+<span id="more"></span>
+
+<h2 id="算法模板框架"><a href="#算法模板框架" class="headerlink" title="算法模板框架"></a>算法模板框架</h2><blockquote>
+<p>滑动窗口算法的思路非常简单，就是维护一个窗口，不断滑动，然后更新答案。这里总结一套滑动窗口算法的通用模板：<br><br>来源：labuladong的算法小抄</p>
+</blockquote>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">SlideWindow</span><span class="params">(string s, string t)</span> </span>&#123;</span><br><span class="line">    unordered_map&lt;<span class="keyword">char</span>, <span class="keyword">int</span>&gt; need, window;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">char</span> c : t) need[c]++;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> left = <span class="number">0</span>, right = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> valid = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(right &lt; s.<span class="built_in">size</span>()) &#123;</span><br><span class="line">        <span class="comment">// c是将移入窗口的字符</span></span><br><span class="line">        <span class="keyword">char</span> c = s[right];</span><br><span class="line">        <span class="comment">// 右移窗口</span></span><br><span class="line">        right++;</span><br><span class="line"></span><br><span class="line">        ...</span><br><span class="line"></span><br><span class="line">        <span class="comment">/*** debug 输出位置 ***/</span></span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;window: [%d, %d]\n&quot;</span>, left, right);</span><br><span class="line">        <span class="comment">/*********************/</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">// 判断左侧窗口是否要收缩</span></span><br><span class="line">        <span class="keyword">while</span>(window needs shrink) &#123;</span><br><span class="line">            <span class="comment">// d是将移出窗口的字符</span></span><br><span class="line">            <span class="keyword">char</span> d = s[left];</span><br><span class="line">            left++;</span><br><span class="line">            <span class="comment">// 进行窗口数据的一系列更新</span></span><br><span class="line">            ...</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="leetcode题目"><a href="#leetcode题目" class="headerlink" title="leetcode题目"></a>leetcode题目</h2><h3 id="74-最小覆盖子串"><a href="#74-最小覆盖子串" class="headerlink" title="74.最小覆盖子串"></a><a href="https://leetcode-cn.com/problems/minimum-window-substring/">74.最小覆盖子串</a></h3><blockquote>
+<p>给你一个字符串 s 、一个字符串 t 。返回 s 中涵盖 t 所有字符的最小子串。如果 s 中不存在涵盖 t 所有字符的子串，则返回空字符串 “”。<br>滑动窗口解法如下：</p>
+</blockquote>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function">string <span class="title">minWindow</span><span class="params">(string s, string t)</span> </span>&#123;</span><br><span class="line">   unordered_map&lt;<span class="keyword">char</span>, <span class="keyword">int</span>&gt; need, window;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">char</span> c : t) need[c]++;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> left = <span class="number">0</span>, right = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> valid = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> start = <span class="number">0</span>, maxlen = INT_MAX;</span><br><span class="line">    <span class="keyword">while</span>(right &lt; s.<span class="built_in">size</span>()) &#123;</span><br><span class="line">        <span class="keyword">char</span> c = s[right];</span><br><span class="line">        right++;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span>(need.<span class="built_in">count</span>(c)) &#123;</span><br><span class="line">            window[c]++;</span><br><span class="line">            <span class="keyword">if</span>(window[c] == need[c]) </span><br><span class="line">                valid++;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span>(valid &gt;= need.<span class="built_in">size</span>()) &#123;</span><br><span class="line">            <span class="keyword">if</span>(right-left &lt; maxlen) &#123;</span><br><span class="line">                maxlen = right - left;</span><br><span class="line">                start = left;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">char</span> d = s[left];</span><br><span class="line">            left++;</span><br><span class="line">            <span class="keyword">if</span>(need.<span class="built_in">count</span>(d)) &#123;</span><br><span class="line">                <span class="keyword">if</span>(window[d] == need[d]) </span><br><span class="line">                    valid--;</span><br><span class="line">                window[d]--;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> maxlen==INT_MAX ? <span class="string">&quot;&quot;</span> : s.<span class="built_in">substr</span>(start, maxlen);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="567-字符串的排列"><a href="#567-字符串的排列" class="headerlink" title="567. 字符串的排列"></a><a href="https://leetcode-cn.com/problems/permutation-in-string/">567. 字符串的排列</a></h3><blockquote>
+<p>给你两个字符串 s1 和 s2 ，写一个函数来判断 s2 是否包含 s1 的排列。如果是，返回 true ；否则，返回 false 。<br><br>换句话说，s1 的排列之一是 s2 的 子串 。</p>
+</blockquote>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">checkInclusion</span><span class="params">(string s1, string s2)</span> </span>&#123;</span><br><span class="line">    unordered_map&lt;<span class="keyword">char</span>, <span class="keyword">int</span>&gt; need, window;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">char</span> c : s1) need[c]++;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> left = <span class="number">0</span>, right = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> valid = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(right &lt; s2.<span class="built_in">size</span>()) &#123;</span><br><span class="line">        <span class="keyword">char</span> c = s2[right];</span><br><span class="line">        right++;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span>(need.<span class="built_in">count</span>(c)) &#123;</span><br><span class="line">            window[c]++;</span><br><span class="line">            <span class="keyword">if</span>(window[c] == need[c])</span><br><span class="line">                valid++;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span>(right-left &gt;= s1.<span class="built_in">size</span>()) &#123;</span><br><span class="line">            <span class="keyword">if</span>(valid == need.<span class="built_in">size</span>()) </span><br><span class="line">                <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">char</span> d = s2[left];</span><br><span class="line">            left++;</span><br><span class="line">            <span class="keyword">if</span>(need.<span class="built_in">count</span>(d)) &#123;</span><br><span class="line">                <span class="keyword">if</span>(window[d] == need[d]) </span><br><span class="line">                    valid--;</span><br><span class="line">                window[d]--;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="438-找到字符串中所有字母异位词"><a href="#438-找到字符串中所有字母异位词" class="headerlink" title="438. 找到字符串中所有字母异位词"></a><a href="https://leetcode-cn.com/problems/find-all-anagrams-in-a-string/">438. 找到字符串中所有字母异位词</a></h3><blockquote>
+<p>给定两个字符串 s 和 p，找到 s 中所有 p 的 异位词 的子串，返回这些子串的起始索引。不考虑答案输出的顺序。<br><br>异位词 指由相同字母重排列形成的字符串（包括相同的字符串）。</p>
+</blockquote>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function">vector&lt;<span class="keyword">int</span>&gt; <span class="title">findAnagrams</span><span class="params">(string s, string p)</span> </span>&#123;</span><br><span class="line">    unordered_map&lt;<span class="keyword">char</span>, <span class="keyword">int</span>&gt; need, window;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">char</span> c : p) need[c]++;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> left = <span class="number">0</span>, right = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> valid = <span class="number">0</span>;</span><br><span class="line">    vector&lt;<span class="keyword">int</span>&gt; res;</span><br><span class="line">    <span class="keyword">while</span>(right &lt; s.<span class="built_in">size</span>()) &#123;</span><br><span class="line">        <span class="keyword">char</span> c = s[right];</span><br><span class="line">        right++;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span>(need.<span class="built_in">count</span>(c)) &#123;</span><br><span class="line">            window[c]++;</span><br><span class="line">            <span class="keyword">if</span>(window[c] == need[c])</span><br><span class="line">                valid++;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span>(right-left &gt;= p.<span class="built_in">size</span>()) &#123;</span><br><span class="line">            <span class="keyword">if</span>(valid == need.<span class="built_in">size</span>())</span><br><span class="line">                res.<span class="built_in">push_back</span>(left);</span><br><span class="line"></span><br><span class="line">            <span class="keyword">char</span> d = s[left];</span><br><span class="line">            left++;</span><br><span class="line">            <span class="keyword">if</span>(need.<span class="built_in">count</span>(d)) &#123;</span><br><span class="line">                <span class="keyword">if</span>(window[d] == need[d])</span><br><span class="line">                    valid--;</span><br><span class="line">                window[d]--;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-无重复字符的最长子串"><a href="#3-无重复字符的最长子串" class="headerlink" title="3. 无重复字符的最长子串"></a><a href="https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/">3. 无重复字符的最长子串</a></h3><blockquote>
+<p>给定一个字符串 s ，请你找出其中不含有重复字符的 最长子串的长度.</p>
+</blockquote>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"> <span class="function"><span class="keyword">int</span> <span class="title">lengthOfLongestSubstring</span><span class="params">(string s)</span> </span>&#123;</span><br><span class="line">    unordered_map&lt;<span class="keyword">char</span>, <span class="keyword">int</span>&gt; window;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> left = <span class="number">0</span>, right = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> res = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(right &lt; s.<span class="built_in">size</span>()) &#123;</span><br><span class="line">        <span class="keyword">char</span> c = s[right];</span><br><span class="line">        right++;</span><br><span class="line"></span><br><span class="line">        window[c]++;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span>(window[c] &gt; <span class="number">1</span>) &#123;</span><br><span class="line">            <span class="keyword">char</span> d = s[left];</span><br><span class="line">            left ++;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span>(window.<span class="built_in">count</span>(d)) </span><br><span class="line">                window[d]--;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        res = <span class="built_in">max</span>(res, right-left);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><p>滑动窗口算法的思路是这样：<br>1.我们在字符串 S 中使用双指针中的左右指针技巧，初始化 left = right = 0，把索引左闭右开区间 [left, right) 称为一个「窗口」。<br>2.我们先不断地增加 right 指针扩大窗口 [left, right)，直到窗口中的字符串符合要求（包含了 T 中的所有字符）。<br>3.此时，我们停止增加 right，转而不断增加 left 指针缩小窗口 [left, right)，直到窗口中的字符串不再符合要求（不包含 T 中的所有字符了）。同时，每次增加 left，我们都要更新一轮结果。<br>4.重复第 2 和第 3 步，直到 right 到达字符串 S 的尽头。<br>这个思路其实也不难，第 2 步相当于在寻找一个<strong>可行解</strong>，然后第 3 步在优化这个<strong>可行解</strong>，最终找到最优解，也就是最短的覆盖子串。左右指针轮流前进，窗口大小增增减减，窗口不断向右滑动，这就是「滑动窗口」这个名字的来历。</p>
+<blockquote>
+<p>位我上者，灿烂星空；道德律令，在我心中。</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>算法</category>
+        <category>滑动窗口</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>线索化二叉树</title>
     <url>/posts/45955.html</url>
     <content><![CDATA[<blockquote>
@@ -293,51 +338,6 @@
       </categories>
       <tags>
         <tag>数据结构</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>滑动窗口算法总结</title>
-    <url>/posts/39893.html</url>
-    <content><![CDATA[<blockquote>
-<p>刷过leetcode的小伙伴肯定对滑动窗口算法很熟悉。<br>滑动窗口是一种很精妙、面试也常考的算法。这篇文章就来总结一下滑动窗口的套路。附带四道leetcode滑动窗口题目题解^.^</p>
-</blockquote>
-<span id="more"></span>
-
-<h2 id="算法模板框架"><a href="#算法模板框架" class="headerlink" title="算法模板框架"></a>算法模板框架</h2><blockquote>
-<p>滑动窗口算法的思路非常简单，就是维护一个窗口，不断滑动，然后更新答案。这里总结一套滑动窗口算法的通用模板：<br><br>来源：labuladong的算法小抄</p>
-</blockquote>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">SlideWindow</span><span class="params">(string s, string t)</span> </span>&#123;</span><br><span class="line">    unordered_map&lt;<span class="keyword">char</span>, <span class="keyword">int</span>&gt; need, window;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">char</span> c : t) need[c]++;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> left = <span class="number">0</span>, right = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> valid = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(right &lt; s.<span class="built_in">size</span>()) &#123;</span><br><span class="line">        <span class="comment">// c是将移入窗口的字符</span></span><br><span class="line">        <span class="keyword">char</span> c = s[right];</span><br><span class="line">        <span class="comment">// 右移窗口</span></span><br><span class="line">        right++;</span><br><span class="line"></span><br><span class="line">        ...</span><br><span class="line"></span><br><span class="line">        <span class="comment">/*** debug 输出位置 ***/</span></span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;window: [%d, %d]\n&quot;</span>, left, right);</span><br><span class="line">        <span class="comment">/*********************/</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">// 判断左侧窗口是否要收缩</span></span><br><span class="line">        <span class="keyword">while</span>(window needs shrink) &#123;</span><br><span class="line">            <span class="comment">// d是将移出窗口的字符</span></span><br><span class="line">            <span class="keyword">char</span> d = s[left];</span><br><span class="line">            left++;</span><br><span class="line">            <span class="comment">// 进行窗口数据的一系列更新</span></span><br><span class="line">            ...</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="leetcode题目"><a href="#leetcode题目" class="headerlink" title="leetcode题目"></a>leetcode题目</h2><h3 id="74-最小覆盖子串"><a href="#74-最小覆盖子串" class="headerlink" title="74.最小覆盖子串"></a><a href="https://leetcode-cn.com/problems/minimum-window-substring/">74.最小覆盖子串</a></h3><blockquote>
-<p>给你一个字符串 s 、一个字符串 t 。返回 s 中涵盖 t 所有字符的最小子串。如果 s 中不存在涵盖 t 所有字符的子串，则返回空字符串 “”。<br>滑动窗口解法如下：</p>
-</blockquote>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function">string <span class="title">minWindow</span><span class="params">(string s, string t)</span> </span>&#123;</span><br><span class="line">   unordered_map&lt;<span class="keyword">char</span>, <span class="keyword">int</span>&gt; need, window;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">char</span> c : t) need[c]++;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> left = <span class="number">0</span>, right = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> valid = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> start = <span class="number">0</span>, maxlen = INT_MAX;</span><br><span class="line">    <span class="keyword">while</span>(right &lt; s.<span class="built_in">size</span>()) &#123;</span><br><span class="line">        <span class="keyword">char</span> c = s[right];</span><br><span class="line">        right++;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span>(need.<span class="built_in">count</span>(c)) &#123;</span><br><span class="line">            window[c]++;</span><br><span class="line">            <span class="keyword">if</span>(window[c] == need[c]) </span><br><span class="line">                valid++;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span>(valid &gt;= need.<span class="built_in">size</span>()) &#123;</span><br><span class="line">            <span class="keyword">if</span>(right-left &lt; maxlen) &#123;</span><br><span class="line">                maxlen = right - left;</span><br><span class="line">                start = left;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">char</span> d = s[left];</span><br><span class="line">            left++;</span><br><span class="line">            <span class="keyword">if</span>(need.<span class="built_in">count</span>(d)) &#123;</span><br><span class="line">                <span class="keyword">if</span>(window[d] == need[d]) </span><br><span class="line">                    valid--;</span><br><span class="line">                window[d]--;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> maxlen==INT_MAX ? <span class="string">&quot;&quot;</span> : s.<span class="built_in">substr</span>(start, maxlen);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="567-字符串的排列"><a href="#567-字符串的排列" class="headerlink" title="567. 字符串的排列"></a><a href="https://leetcode-cn.com/problems/permutation-in-string/">567. 字符串的排列</a></h3><blockquote>
-<p>给你两个字符串 s1 和 s2 ，写一个函数来判断 s2 是否包含 s1 的排列。如果是，返回 true ；否则，返回 false 。<br><br>换句话说，s1 的排列之一是 s2 的 子串 。</p>
-</blockquote>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">checkInclusion</span><span class="params">(string s1, string s2)</span> </span>&#123;</span><br><span class="line">    unordered_map&lt;<span class="keyword">char</span>, <span class="keyword">int</span>&gt; need, window;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">char</span> c : s1) need[c]++;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> left = <span class="number">0</span>, right = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> valid = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(right &lt; s2.<span class="built_in">size</span>()) &#123;</span><br><span class="line">        <span class="keyword">char</span> c = s2[right];</span><br><span class="line">        right++;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span>(need.<span class="built_in">count</span>(c)) &#123;</span><br><span class="line">            window[c]++;</span><br><span class="line">            <span class="keyword">if</span>(window[c] == need[c])</span><br><span class="line">                valid++;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span>(right-left &gt;= s1.<span class="built_in">size</span>()) &#123;</span><br><span class="line">            <span class="keyword">if</span>(valid == need.<span class="built_in">size</span>()) </span><br><span class="line">                <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">char</span> d = s2[left];</span><br><span class="line">            left++;</span><br><span class="line">            <span class="keyword">if</span>(need.<span class="built_in">count</span>(d)) &#123;</span><br><span class="line">                <span class="keyword">if</span>(window[d] == need[d]) </span><br><span class="line">                    valid--;</span><br><span class="line">                window[d]--;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="438-找到字符串中所有字母异位词"><a href="#438-找到字符串中所有字母异位词" class="headerlink" title="438. 找到字符串中所有字母异位词"></a><a href="https://leetcode-cn.com/problems/find-all-anagrams-in-a-string/">438. 找到字符串中所有字母异位词</a></h3><blockquote>
-<p>给定两个字符串 s 和 p，找到 s 中所有 p 的 异位词 的子串，返回这些子串的起始索引。不考虑答案输出的顺序。<br><br>异位词 指由相同字母重排列形成的字符串（包括相同的字符串）。</p>
-</blockquote>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function">vector&lt;<span class="keyword">int</span>&gt; <span class="title">findAnagrams</span><span class="params">(string s, string p)</span> </span>&#123;</span><br><span class="line">    unordered_map&lt;<span class="keyword">char</span>, <span class="keyword">int</span>&gt; need, window;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">char</span> c : p) need[c]++;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> left = <span class="number">0</span>, right = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> valid = <span class="number">0</span>;</span><br><span class="line">    vector&lt;<span class="keyword">int</span>&gt; res;</span><br><span class="line">    <span class="keyword">while</span>(right &lt; s.<span class="built_in">size</span>()) &#123;</span><br><span class="line">        <span class="keyword">char</span> c = s[right];</span><br><span class="line">        right++;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span>(need.<span class="built_in">count</span>(c)) &#123;</span><br><span class="line">            window[c]++;</span><br><span class="line">            <span class="keyword">if</span>(window[c] == need[c])</span><br><span class="line">                valid++;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span>(right-left &gt;= p.<span class="built_in">size</span>()) &#123;</span><br><span class="line">            <span class="keyword">if</span>(valid == need.<span class="built_in">size</span>())</span><br><span class="line">                res.<span class="built_in">push_back</span>(left);</span><br><span class="line"></span><br><span class="line">            <span class="keyword">char</span> d = s[left];</span><br><span class="line">            left++;</span><br><span class="line">            <span class="keyword">if</span>(need.<span class="built_in">count</span>(d)) &#123;</span><br><span class="line">                <span class="keyword">if</span>(window[d] == need[d])</span><br><span class="line">                    valid--;</span><br><span class="line">                window[d]--;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="3-无重复字符的最长子串"><a href="#3-无重复字符的最长子串" class="headerlink" title="3. 无重复字符的最长子串"></a><a href="https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/">3. 无重复字符的最长子串</a></h3><blockquote>
-<p>给定一个字符串 s ，请你找出其中不含有重复字符的 最长子串的长度.</p>
-</blockquote>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"> <span class="function"><span class="keyword">int</span> <span class="title">lengthOfLongestSubstring</span><span class="params">(string s)</span> </span>&#123;</span><br><span class="line">    unordered_map&lt;<span class="keyword">char</span>, <span class="keyword">int</span>&gt; window;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> left = <span class="number">0</span>, right = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> res = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(right &lt; s.<span class="built_in">size</span>()) &#123;</span><br><span class="line">        <span class="keyword">char</span> c = s[right];</span><br><span class="line">        right++;</span><br><span class="line"></span><br><span class="line">        window[c]++;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span>(window[c] &gt; <span class="number">1</span>) &#123;</span><br><span class="line">            <span class="keyword">char</span> d = s[left];</span><br><span class="line">            left ++;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span>(window.<span class="built_in">count</span>(d)) </span><br><span class="line">                window[d]--;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        res = <span class="built_in">max</span>(res, right-left);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><p>滑动窗口算法的思路是这样：<br>1.我们在字符串 S 中使用双指针中的左右指针技巧，初始化 left = right = 0，把索引左闭右开区间 [left, right) 称为一个「窗口」。<br>2.我们先不断地增加 right 指针扩大窗口 [left, right)，直到窗口中的字符串符合要求（包含了 T 中的所有字符）。<br>3.此时，我们停止增加 right，转而不断增加 left 指针缩小窗口 [left, right)，直到窗口中的字符串不再符合要求（不包含 T 中的所有字符了）。同时，每次增加 left，我们都要更新一轮结果。<br>4.重复第 2 和第 3 步，直到 right 到达字符串 S 的尽头。<br>这个思路其实也不难，第 2 步相当于在寻找一个<strong>可行解</strong>，然后第 3 步在优化这个<strong>可行解</strong>，最终找到最优解，也就是最短的覆盖子串。左右指针轮流前进，窗口大小增增减减，窗口不断向右滑动，这就是「滑动窗口」这个名字的来历。</p>
-<blockquote>
-<p>位我上者，灿烂星空；道德律令，在我心中。</p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>算法</category>
-        <category>滑动窗口</category>
-      </categories>
-      <tags>
-        <tag>算法</tag>
       </tags>
   </entry>
   <entry>

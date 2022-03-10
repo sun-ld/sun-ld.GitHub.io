@@ -432,7 +432,7 @@
     <title>LRU和LFU缓存</title>
     <url>/posts/13455.html</url>
     <content><![CDATA[<blockquote>
-<p>总结一下  LRU (最近最少使用) 缓存和最不经常使用（LFU）缓存的算法实现</p>
+<p>总结一下  LRU (最近最少使用) 缓存和LFU（最不经常使用）缓存的算法实现</p>
 </blockquote>
 <span id="more"></span>
 

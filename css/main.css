@@ -1290,7 +1290,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #7e6790;
+  background: #0487de;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2833,7 +2833,7 @@ blockquote {
 }
 article p {
   font-family: 'Microsoft YaHei', 'SF Pro Display', Roboto, Noto, Arial, 'PingFang SC', sans-serif;
-  font-size: 16px;
+  font-size: 18px;
   color: #4f4f4f;
   font-weight: 400;
   line-height: 26px;
@@ -2852,5 +2852,5 @@ strong {
 }
 .gutter pre span,
 .code pre span {
-  font: 400 14px Source Code monospace, PingFang SC, Microsoft YaHei, sans-serif !important;
+  font: 400 17px Source Code monospace, PingFang SC, Microsoft YaHei, sans-serif !important;
 }

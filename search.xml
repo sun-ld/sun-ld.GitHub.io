@@ -401,7 +401,7 @@
       </tags>
   </entry>
   <entry>
-    <title>Leetcode链表题目总结</title>
+    <title>链表题目总结</title>
     <url>/posts/6854.html</url>
     <content><![CDATA[<blockquote>
 <p>链表是一种很重要的数据结构。涉及指针操作，思路往往很巧妙，代码短小精悍，很适合拿来在面试的时候考察，本文就来总结一下Leetcode链表相关的经典题目~</p>
@@ -416,8 +416,7 @@
 <h3 id="1、递归解法"><a href="#1、递归解法" class="headerlink" title="1、递归解法"></a>1、递归解法</h3><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"> <span class="function">ListNode* <span class="title">reverseList</span><span class="params">(ListNode* head)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 链表为空；head指向尾结点</span></span><br><span class="line">    <span class="keyword">if</span>(head==<span class="literal">nullptr</span> || head-&gt;next==<span class="literal">nullptr</span>)</span><br><span class="line">        <span class="keyword">return</span> head;</span><br><span class="line">    </span><br><span class="line">    ListNode *newHead = <span class="built_in">reverseList</span>(head-&gt;next);</span><br><span class="line">    head-&gt;next-&gt;next = head;</span><br><span class="line">    head-&gt;next = <span class="literal">nullptr</span></span><br><span class="line">    <span class="keyword">return</span> newHead;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h3 id="2、迭代解法"><a href="#2、迭代解法" class="headerlink" title="2、迭代解法"></a>2、迭代解法</h3><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function">ListNode* <span class="title">reverseList</span><span class="params">(ListNode* head)</span> </span>&#123;</span><br><span class="line">    ListNode *dummy = <span class="built_in">ListNode</span>(<span class="number">-1</span>);</span><br><span class="line">    dummy-&gt;next = <span class="literal">nullptr</span>;</span><br><span class="line"></span><br><span class="line">    ListNode *cur = head;</span><br><span class="line">    <span class="keyword">while</span>(head != <span class="literal">nullptr</span>) &#123;</span><br><span class="line">        ListNode *_next = cur-&gt;next;</span><br><span class="line">        cur-&gt;next = dummy-&gt;next;</span><br><span class="line">        dummy-&gt;next = cur;</span><br><span class="line">        cur = _next;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> dummy-&gt;next;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<blockquote>
+<h3 id=""><a href="#" class="headerlink" title=""></a></h3><blockquote>
 <p>位我上者，灿烂星空；道德律令，在我心中。</p>
 </blockquote>
 ]]></content>
@@ -430,7 +429,7 @@
       </tags>
   </entry>
   <entry>
-    <title>LRU缓存和LFU缓存</title>
+    <title>LRU和LFU</title>
     <url>/posts/13455.html</url>
     <content><![CDATA[<blockquote>
 <p>总结一下  LRU (最近最少使用) 缓存和LFU（最不经常使用）缓存的算法实现</p>

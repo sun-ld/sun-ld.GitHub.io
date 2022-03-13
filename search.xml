@@ -429,7 +429,7 @@
       </tags>
   </entry>
   <entry>
-    <title>LRU和LFU</title>
+    <title>LRU、LFU缓存实现</title>
     <url>/posts/13455.html</url>
     <content><![CDATA[<blockquote>
 <p>总结一下  LRU (最近最少使用) 缓存和LFU（最不经常使用）缓存的算法实现</p>

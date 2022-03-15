@@ -401,7 +401,7 @@
       </tags>
   </entry>
   <entry>
-    <title>Leeetcode链表题目总结</title>
+    <title>Leetcode链表题目总结</title>
     <url>/posts/6854.html</url>
     <content><![CDATA[<blockquote>
 <p>链表是一种很重要的数据结构。涉及指针操作，代码短小精悍，颇有四两拨千斤之感。因此链表相关的问题很适合拿来在面试的时候考察应聘者的编程基本功，本文就来总结一下Leetcode链表相关的题目~</p>

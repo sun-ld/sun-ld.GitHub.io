@@ -4,14 +4,14 @@
     <title>二叉树的遍历</title>
     <url>/posts/12682.html</url>
     <content><![CDATA[<blockquote>
-<p>总结二叉树递归、非递归的前序、中序和后序遍历算法</p>
+<p>总结二叉树递归、非递归的前序、中序和后序遍历算法。</p>
 </blockquote>
 <span id="more"></span>
 
 <h2 id="前序遍历"><a href="#前序遍历" class="headerlink" title="前序遍历"></a>前序遍历</h2><h3 id="递归遍历方法"><a href="#递归遍历方法" class="headerlink" title="递归遍历方法"></a>递归遍历方法</h3><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">PreOrder</span><span class="params">(TreeNode* node)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(node == <span class="literal">nullptr</span>) </span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">        </span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d &quot;</span>, node-&gt;val);</span><br><span class="line">    <span class="built_in">PreOrder</span>(node-&gt;left);</span><br><span class="line">    <span class="built_in">PreOrder</span>(node-&gt;right);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="非递归遍历方法"><a href="#非递归遍历方法" class="headerlink" title="非递归遍历方法"></a>非递归遍历方法</h3><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">PreOrder</span><span class="params">(TreeNode* node)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(node == <span class="literal">nullptr</span>)</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line"></span><br><span class="line">    stack&lt;TreeNode*&gt; stk;</span><br><span class="line">    stk.<span class="built_in">push</span>(root);</span><br><span class="line">    <span class="keyword">while</span>(!stk.<span class="built_in">empty</span>()) &#123;</span><br><span class="line">        node *p = stk.<span class="built_in">top</span>(); stk.<span class="built_in">pop</span>();</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d &quot;</span>, p-&gt;val);</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span>(p-&gt;right) </span><br><span class="line">            stk.<span class="built_in">push</span>(p-&gt;right);</span><br><span class="line">        <span class="keyword">if</span>(p-&gt;left) </span><br><span class="line">            stk.<span class="built_in">push</span>(p-&gt;left);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="中序遍历"><a href="#中序遍历" class="headerlink" title="中序遍历"></a>中序遍历</h2><h3 id="递归遍历方法-1"><a href="#递归遍历方法-1" class="headerlink" title="递归遍历方法"></a>递归遍历方法</h3><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">InOrder</span><span class="params">(TreeNode* node)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(node == <span class="literal">nullptr</span>) </span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">        </span><br><span class="line">    <span class="built_in">InOrder</span>(node-&gt;left);    </span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d &quot;</span>, node-&gt;val);</span><br><span class="line">    <span class="built_in">InOrder</span>(node-&gt;right);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="非递归遍历方法-1"><a href="#非递归遍历方法-1" class="headerlink" title="非递归遍历方法"></a>非递归遍历方法</h3><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">InOrder</span><span class="params">(TreeNode* node)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(node == <span class="literal">nullptr</span>) </span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    </span><br><span class="line">    TreeNode *p = node;</span><br><span class="line">    stack&lt;TreeNode*&gt; stk;</span><br><span class="line">    stk.<span class="built_in">push</span>(node);</span><br><span class="line">    <span class="keyword">while</span>(p || !stk.<span class="built_in">empty</span>()) &#123;</span><br><span class="line">        <span class="keyword">if</span>(p) &#123;</span><br><span class="line">            stk.<span class="built_in">push</span>(p);</span><br><span class="line">            p = p-&gt;left;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            TreeNode *p = stk.<span class="built_in">top</span>(); </span><br><span class="line">            stk.<span class="built_in">pop</span>();</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, p-&gt;val);</span><br><span class="line">            p = p-&gt;right;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="非递归遍历方法-1"><a href="#非递归遍历方法-1" class="headerlink" title="非递归遍历方法"></a>非递归遍历方法</h3><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">InOrder</span><span class="params">(TreeNode* node)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(node == <span class="literal">nullptr</span>) </span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    </span><br><span class="line">    stack&lt;TreeNode*&gt; stk;</span><br><span class="line">    TreeNode *p = node;</span><br><span class="line">    <span class="keyword">while</span>(p || !stk.<span class="built_in">empty</span>()) &#123;</span><br><span class="line">        <span class="keyword">if</span>(p) &#123;</span><br><span class="line">            stk.<span class="built_in">push</span>(p);</span><br><span class="line">            p = p-&gt;left;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            TreeNode *p = stk.<span class="built_in">top</span>(); </span><br><span class="line">            stk.<span class="built_in">pop</span>();</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, p-&gt;val);</span><br><span class="line">            p = p-&gt;right;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="后序遍历"><a href="#后序遍历" class="headerlink" title="后序遍历"></a>后序遍历</h2><h3 id="递归遍历方法-2"><a href="#递归遍历方法-2" class="headerlink" title="递归遍历方法"></a>递归遍历方法</h3><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">PostOrder</span><span class="params">(TreeNode* node)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(node == <span class="literal">nullptr</span>)</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">PostOrder</span>(node-&gt;left);</span><br><span class="line">    <span class="built_in">PostOrder</span>(node-&gt;right);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d &quot;</span>, node-&gt;val);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="非递归遍历方法-2"><a href="#非递归遍历方法-2" class="headerlink" title="非递归遍历方法"></a>非递归遍历方法</h3><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">PostOrder</span><span class="params">(TreeNode* node)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(node == <span class="literal">nullptr</span>)</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    </span><br><span class="line">    stack&lt;TreeNode*&gt; stk1, stk2;</span><br><span class="line">    stk1.<span class="built_in">push</span>(node);</span><br><span class="line">    <span class="keyword">while</span>(!stk1.<span class="built_in">empty</span>()) &#123;</span><br><span class="line">        TreeNode *p = stk1.<span class="built_in">top</span>();</span><br><span class="line">        stk1.<span class="built_in">pop</span>();</span><br><span class="line">        </span><br><span class="line">        stk2.<span class="built_in">push</span>(p);</span><br><span class="line">        <span class="keyword">if</span>(p-&gt;left)</span><br><span class="line">            stk1.<span class="built_in">push</span>(p-&gt;left);</span><br><span class="line">        <span class="keyword">if</span>(p-&gt;right)</span><br><span class="line">            stk1.<span class="built_in">push</span>(p-&gt;right);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">while</span>(!stk2.<span class="built_in">empty</span>()) &#123;</span><br><span class="line">        TreeNode *p = stk2.<span class="built_in">top</span>();</span><br><span class="line">        stk2.<span class="built_in">pop</span>();</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d &quot;</span>, p-&gt;val);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="层序遍历"><a href="#层序遍历" class="headerlink" title="层序遍历"></a>层序遍历</h2><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">LevelOrder</span><span class="params">(TreeNode* root)</span> </span>&#123;</span><br><span class="line">    queue&lt;TreeNode*&gt; q;</span><br><span class="line">    q.<span class="built_in">push</span>(root);</span><br><span class="line">    <span class="keyword">while</span>(!q.<span class="built_in">empty</span>()) &#123;</span><br><span class="line">        TreeNode *p = q.<span class="built_in">front</span>();</span><br><span class="line">        q.<span class="built_in">pop</span>();</span><br><span class="line"></span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d &quot;</span>, p-&gt;val);</span><br><span class="line">        <span class="keyword">if</span>(p-&gt;left) </span><br><span class="line">            q.<span class="built_in">push</span>(p-&gt;left);</span><br><span class="line">        <span class="keyword">if</span>(p-&gt;right)</span><br><span class="line">            q.<span class="built_in">push</span>(p-&gt;right);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -56,7 +56,8 @@
     <content><![CDATA[<blockquote>
 <p>Hexo博客搭建及主题美化，来自<a href="https://yuumiy.github.io/posts/2789.html">岛田悠米的博客。</a></p>
 </blockquote>
-<p><img data-src="/posts/10121/hello.jpg"></p>
+<!-- ![](hello.jpg) -->
+
 <span id="more"></span>
 
 <blockquote>
@@ -75,7 +76,7 @@
     <title>二分查找中的lower_bound、upper_bound</title>
     <url>/posts/701.html</url>
     <content><![CDATA[<blockquote>
-<p>总结一下二分查找细节及lower_bound、upper_bound问题</p>
+<p>总结一下二分查找细节及lower_bound、upper_bound问题。</p>
 </blockquote>
 <span id="more"></span>
 
@@ -101,7 +102,7 @@
     <title>常见排序算法</title>
     <url>/posts/62992.html</url>
     <content><![CDATA[<blockquote>
-<p>作为计算机专业科班的学生，想必学习算法的时候肯定学过<strong>排序</strong>。<br>找工作面试的时候面试官也经常让手撕快排、堆排序等，所以总结一下关于（内部）排序算法的知识点还是很有必要滴！废话不多说我们开始吧~</p>
+<p>这是一个程序员人均手撕快排、堆排序的时代0.0。</p>
 </blockquote>
 <span id="more"></span>
 
@@ -162,7 +163,7 @@
     <title>华语流行乐教父罗大佑神级歌词</title>
     <url>/posts/47257.html</url>
     <content><![CDATA[<blockquote>
-<p>华语流行乐教父——罗大佑的那些不朽的作品</p>
+<p>华语流行乐教父——罗大佑的那些不朽的作品。</p>
 </blockquote>
 <span id="more"></span>
 
@@ -212,7 +213,7 @@
     <title>随笔</title>
     <url>/posts/43432.html</url>
     <content><![CDATA[<blockquote>
-<p>近期读书时摘抄的的一些使人眼前一亮的观点^.^</p>
+<p>近期读书时摘抄的的一些使人眼前一亮的观点^.^。</p>
 </blockquote>
 <span id="more"></span>
 <h2 id="叔本华"><a href="#叔本华" class="headerlink" title="叔本华"></a>叔本华</h2><blockquote>
@@ -300,7 +301,7 @@
     <title>滑动窗口算法总结</title>
     <url>/posts/39893.html</url>
     <content><![CDATA[<blockquote>
-<p>刷过leetcode的小伙伴肯定对滑动窗口算法很熟悉。<br>滑动窗口是一种很精妙、面试也常考的算法。这篇文章就来总结一下滑动窗口的套路。附带四道leetcode滑动窗口题目题解^.^</p>
+<p>滑动窗口是一种很精妙、面试也常考的算法。本文总结一下滑动窗口的套路^.^。</p>
 </blockquote>
 <span id="more"></span>
 
@@ -345,7 +346,7 @@
     <title>微软CSS三面凉经</title>
     <url>/posts/39426.html</url>
     <content><![CDATA[<blockquote>
-<p>参加了微软CSS（技术支持）岗位的面试<br>问了一些基础的专业问题，答上了大部分吧，一些细节说得不是很好，只能说自己太菜了，还是要努力啊！</p>
+<p>参加了微软CSS（技术支持）岗位的面试，面经奉上~。</p>
 </blockquote>
 <span id="more"></span>
 
@@ -401,10 +402,10 @@
       </tags>
   </entry>
   <entry>
-    <title>Leetcode链表题目总结</title>
+    <title>Leetcode链表</title>
     <url>/posts/6854.html</url>
     <content><![CDATA[<blockquote>
-<p>链表是一种很重要的数据结构。涉及指针操作，代码短小精悍，颇有四两拨千斤之感。因此链表相关的问题很适合拿来在面试的时候考察应聘者的编程基本功，本文就来总结一下leetcode链表相关的题目~</p>
+<p>链表可拿来考验程序员基本功，代码短小精悍，颇有四两拨千斤之感~。</p>
 </blockquote>
 <span id="more"></span>
 
@@ -468,7 +469,18 @@
 <p>给你一个链表数组，每个链表都已经按升序排列。<br>请你将所有链表合并到一个升序链表中，返回合并后的链表。</p>
 </blockquote>
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function">ListNode* <span class="title">mergeKLists</span><span class="params">(vector&lt;ListNode*&gt;&amp; lists)</span> </span>&#123;</span><br><span class="line">    ListNode *dummy = <span class="keyword">new</span> <span class="built_in">ListNode</span>(<span class="number">-1</span>);</span><br><span class="line">    ListNode *cur = dummy;</span><br><span class="line"></span><br><span class="line">    priority_queue&lt;ListNode*, vector&lt;ListNode*&gt;, cmp&gt; pq;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">auto</span> node : lists) &#123;</span><br><span class="line">        <span class="keyword">if</span>(node != <span class="literal">nullptr</span>) &#123;</span><br><span class="line">            pq.<span class="built_in">push</span>(node);</span><br><span class="line">        &#125;   </span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span>(!pq.<span class="built_in">empty</span>()) &#123;</span><br><span class="line">        <span class="keyword">auto</span> t = pq.<span class="built_in">top</span>(); pq.<span class="built_in">pop</span>();</span><br><span class="line">        cur-&gt;next = t;</span><br><span class="line">        cur = cur-&gt;next;</span><br><span class="line">        <span class="keyword">if</span> (cur-&gt;next) pq.<span class="built_in">push</span>(cur-&gt;next);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> dummy-&gt;next;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">cmp</span>&#123;</span></span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">operator</span><span class="params">()</span> <span class="params">(ListNode* a, ListNode* b)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> a-&gt;val &gt; b-&gt;val;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<blockquote>
+
+<h2 id="148-排序链表"><a href="#148-排序链表" class="headerlink" title="148. 排序链表"></a><a href="https://leetcode-cn.com/classic/problems/sort-list/description/">148. 排序链表</a></h2><blockquote>
+<p>给你链表的头结点 head ，请将其按 升序 排列并返回 排序后的链表 。</p>
+</blockquote>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">      <span class="function">ListNode* <span class="title">sortList</span><span class="params">(ListNode* head)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!head || !head-&gt;next) <span class="keyword">return</span> head;</span><br><span class="line">        ListNode *slow = head, *fast = head, *pre = <span class="literal">nullptr</span>;</span><br><span class="line">        <span class="keyword">while</span>(fast &amp;&amp; fast-&gt;next) &#123;</span><br><span class="line">            pre = slow;</span><br><span class="line">            slow = slow-&gt;next;</span><br><span class="line">            fast = fast-&gt;next-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        pre-&gt;next = <span class="literal">nullptr</span>;</span><br><span class="line">        ListNode* half1 = <span class="built_in">sortList</span>(head);</span><br><span class="line">        ListNode* half2 = <span class="built_in">sortList</span>(slow);</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">mergeList</span>(half1, half2);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function">ListNode* <span class="title">mergeList</span><span class="params">(ListNode* l1, ListNode* l2)</span> </span>&#123;</span><br><span class="line">        ListNode* dummy = <span class="keyword">new</span> <span class="built_in">ListNode</span>(<span class="number">-1</span>);</span><br><span class="line">        ListNode* cur = dummy;</span><br><span class="line">        <span class="keyword">while</span>(l1 &amp;&amp; l2) &#123;</span><br><span class="line">            <span class="keyword">if</span>(l1-&gt;val &lt; l2-&gt;val) &#123;</span><br><span class="line">                cur-&gt;next = l1;</span><br><span class="line">                l1 = l1-&gt;next;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                cur-&gt;next = l2;</span><br><span class="line">                l2 = l2-&gt;next;</span><br><span class="line">            &#125;</span><br><span class="line">            cur = cur-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(l1) cur-&gt;next = l1;</span><br><span class="line">        <span class="keyword">if</span>(l2) cur-&gt;next = l2;</span><br><span class="line">        <span class="keyword">return</span> dummy-&gt;next;</span><br><span class="line">    &#125;  </span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h2 id="328-奇偶链表"><a href="#328-奇偶链表" class="headerlink" title="328. 奇偶链表"></a><a href="https://leetcode-cn.com/classic/problems/odd-even-linked-list/description/">328. 奇偶链表</a></h2><blockquote>
+<p>定单链表的头节点 head ，将所有索引为奇数的节点和索引为偶数的节点分别组合在一起，然后返回重新排序的列表。第一个节点的索引被认为是 奇数 ， 第二个节点的索引为 偶数 ，以此类推。<br>请注意，偶数组和奇数组内部的相对顺序应该与输入时保持一致。<br>你必须在 O(1) 的额外空间复杂度和 O(n) 的时间复杂度下解决这个问题。</p>
+</blockquote>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function">ListNode* <span class="title">oddEvenList</span><span class="params">(ListNode* head)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(head == <span class="literal">nullptr</span>)</span><br><span class="line">        <span class="keyword">return</span> head;</span><br><span class="line">    </span><br><span class="line">    ListNode *evenHead = head-&gt;next;</span><br><span class="line">    ListNode *odd = head, *even = evenHead;</span><br><span class="line">    <span class="keyword">while</span>(even &amp;&amp; even-&gt;next) &#123;</span><br><span class="line">        odd-&gt;next = even-&gt;next;</span><br><span class="line">        odd = odd-&gt;next;</span><br><span class="line">        even-&gt;next = odd-&gt;next;</span><br><span class="line">        even = even-&gt;next;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    odd-&gt;next = evenHead;</span><br><span class="line">    <span class="keyword">return</span> head;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id=""><a href="#" class="headerlink" title=""></a></h2><blockquote>
 <p>位我上者，灿烂星空；道德律令，在我心中。</p>
 </blockquote>
 ]]></content>
@@ -484,7 +496,7 @@
     <title>LRU和LFU缓存实现</title>
     <url>/posts/13455.html</url>
     <content><![CDATA[<blockquote>
-<p>LRU (最近最少使用) 缓存和LFU（最不经常使用）缓存是面试中经常问到的两个算法。 LRU底层使用哈希链表实现，其结构之优雅、思路之精巧，很值得学习一番！本文就来介绍一下LRU和LFU的具体实现。<br>废话不多说，看代码~</p>
+<p>本文就来介绍一下LRU和LFU的具体实现，废话不多说，看代码~。</p>
 </blockquote>
 <span id="more"></span>
 
@@ -511,10 +523,34 @@
       </tags>
   </entry>
   <entry>
-    <title>并查集知识点总结</title>
+    <title>DFS和BFS套路总结</title>
+    <url>/posts/51190.html</url>
+    <content><![CDATA[<blockquote>
+<p>本文总结一下DFS和BFS算法，体会计算机搜索的奥（笨）妙（拙）~。</p>
+</blockquote>
+<span id="more"></span>
+
+<h2 id="431-找无向图的连通块"><a href="#431-找无向图的连通块" class="headerlink" title="431. 找无向图的连通块"></a><a href="">431. 找无向图的连通块</a></h2><blockquote>
+<p>找出无向图中所有的连通块。<br>图中的每个节点包含一个label属性和一个邻接点的列表。（一个无向图的连通块是一个子图，其中任意两个顶点通过路径相连，且不与整个图中的其它顶点相连。）<br>你需要返回 label 集合的列表.</p>
+</blockquote>
+<h3 id="1、DFS解法"><a href="#1、DFS解法" class="headerlink" title="1、DFS解法"></a>1、DFS解法</h3><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">unordered_set&lt;UndirectedGraphNode*&gt; vis;</span><br><span class="line">vector&lt;vector&lt;<span class="keyword">int</span>&gt;&gt; <span class="built_in">connectedSet</span>(vector&lt;UndirectedGraphNode*&gt; nodes) &#123;</span><br><span class="line">    <span class="comment">// write your code here</span></span><br><span class="line">    vector&lt;vector&lt;<span class="keyword">int</span>&gt; &gt; res;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nodes.<span class="built_in">size</span>(); i++) &#123;</span><br><span class="line">        <span class="keyword">if</span>(!vis.<span class="built_in">count</span>(nodes[i])) &#123;</span><br><span class="line">            vector&lt;<span class="keyword">int</span>&gt; cur;</span><br><span class="line">            <span class="built_in">dfs</span>(nodes[i], cur);</span><br><span class="line">            <span class="built_in">sort</span>(cur.<span class="built_in">begin</span>(), cur.<span class="built_in">end</span>());</span><br><span class="line">            res.<span class="built_in">push_back</span>(cur);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(UndirectedGraphNode* node, vector&lt;<span class="keyword">int</span>&gt;&amp; cur)</span> </span>&#123;</span><br><span class="line">    vis.<span class="built_in">insert</span>(node);</span><br><span class="line">    cur.<span class="built_in">push_back</span>(node-&gt;label);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; node-&gt;neighbors.<span class="built_in">size</span>(); i++) &#123;</span><br><span class="line">        <span class="keyword">if</span>(vis.<span class="built_in">count</span>(node-&gt;neighbors[i])) <span class="keyword">continue</span>;</span><br><span class="line">        <span class="built_in">dfs</span>(node-&gt;neighbors[i], cur);</span><br><span class="line">    &#125;      </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="2、BFS解法"><a href="#2、BFS解法" class="headerlink" title="2、BFS解法"></a>2、BFS解法</h3><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">unordered_set&lt;UndirectedGraphNode*&gt; vis;</span><br><span class="line">vector&lt;vector&lt;<span class="keyword">int</span>&gt;&gt; <span class="built_in">connectedSet</span>(vector&lt;UndirectedGraphNode*&gt; nodes) &#123;</span><br><span class="line">    <span class="comment">// write your code here</span></span><br><span class="line">    vector&lt;vector&lt;<span class="keyword">int</span>&gt; &gt; res;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nodes.<span class="built_in">size</span>(); i++) &#123;</span><br><span class="line">        <span class="keyword">if</span>(!vis.<span class="built_in">count</span>(nodes[i])) &#123;</span><br><span class="line">            vector&lt;<span class="keyword">int</span>&gt; cur;</span><br><span class="line">            <span class="comment">// dfs(nodes[i], cur);</span></span><br><span class="line">            <span class="built_in">bfs</span>(nodes[i], cur);</span><br><span class="line">            <span class="built_in">sort</span>(cur.<span class="built_in">begin</span>(), cur.<span class="built_in">end</span>());</span><br><span class="line">            res.<span class="built_in">push_back</span>(cur);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">bfs</span><span class="params">(UndirectedGraphNode* node, vector&lt;<span class="keyword">int</span>&gt;&amp; cur)</span> </span>&#123;</span><br><span class="line">    queue&lt;UndirectedGraphNode*&gt; q;</span><br><span class="line">    vis.<span class="built_in">insert</span>(node);</span><br><span class="line">    q.<span class="built_in">push</span>(node);</span><br><span class="line">    cur.<span class="built_in">push_back</span>(node-&gt;label);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span>(!q.<span class="built_in">empty</span>()) &#123;</span><br><span class="line">        UndirectedGraphNode* tnode = q.<span class="built_in">front</span>();</span><br><span class="line">        q.<span class="built_in">pop</span>();</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">auto</span> neighbor : tnode-&gt;neighbors) &#123;</span><br><span class="line">            <span class="keyword">if</span>(vis.<span class="built_in">count</span>(neighbor)) <span class="keyword">continue</span>;</span><br><span class="line">            q.<span class="built_in">push</span>(neighbor);</span><br><span class="line">            cur.<span class="built_in">push_back</span>(neighbor-&gt;label);</span><br><span class="line">            vis.<span class="built_in">insert</span>(neighbor);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>算法</category>
+        <category>DFS-BFS</category>
+      </categories>
+      <tags>
+        <tag>DFS—BFS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>并查集</title>
     <url>/posts/46268.html</url>
     <content><![CDATA[<blockquote>
-<p>Union-Find 算法，也就是常说的并查集算法，主要是解决图论中「动态连通性」问题的。并查集是一种树形的数据结构，用来表示不相交集合的数据。本文推荐一门通俗易懂的并查集学习教程，并附上leetcode并查集经典题目及题解~</p>
+<p>本文总结一下并查集在实际问题中的应用，体会一下并查集的精巧的构思^.^。</p>
 </blockquote>
 <span id="more"></span>
 
@@ -544,30 +580,6 @@
       </categories>
       <tags>
         <tag>并查集</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>DFS和BFS套路总结</title>
-    <url>/posts/51190.html</url>
-    <content><![CDATA[<blockquote>
-<p>深度优先遍历（Depth First Search， 简称 DFS）与广度优先遍历（Breath First Search，简称 DFS）是图论中两种非常重要的算法，生产上广泛用于拓扑排序，寻路（走迷宫），搜索引擎，爬虫等，也频繁出现在 leetcode，高频面试题中。本文就来总结一下DFS和BFS算法~</p>
-</blockquote>
-<span id="more"></span>
-
-<h2 id="431-找无向图的连通块"><a href="#431-找无向图的连通块" class="headerlink" title="431. 找无向图的连通块"></a><a href="">431. 找无向图的连通块</a></h2><blockquote>
-<p>找出无向图中所有的连通块。<br>图中的每个节点包含一个label属性和一个邻接点的列表。（一个无向图的连通块是一个子图，其中任意两个顶点通过路径相连，且不与整个图中的其它顶点相连。）<br>你需要返回 label 集合的列表.</p>
-</blockquote>
-<h3 id="1、DFS解法"><a href="#1、DFS解法" class="headerlink" title="1、DFS解法"></a>1、DFS解法</h3><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">unordered_set&lt;UndirectedGraphNode*&gt; vis;</span><br><span class="line">vector&lt;vector&lt;<span class="keyword">int</span>&gt;&gt; <span class="built_in">connectedSet</span>(vector&lt;UndirectedGraphNode*&gt; nodes) &#123;</span><br><span class="line">    <span class="comment">// write your code here</span></span><br><span class="line">    vector&lt;vector&lt;<span class="keyword">int</span>&gt; &gt; res;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nodes.<span class="built_in">size</span>(); i++) &#123;</span><br><span class="line">        <span class="keyword">if</span>(!vis.<span class="built_in">count</span>(nodes[i])) &#123;</span><br><span class="line">            vector&lt;<span class="keyword">int</span>&gt; cur;</span><br><span class="line">            <span class="built_in">dfs</span>(nodes[i], cur);</span><br><span class="line">            <span class="built_in">sort</span>(cur.<span class="built_in">begin</span>(), cur.<span class="built_in">end</span>());</span><br><span class="line">            res.<span class="built_in">push_back</span>(cur);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(UndirectedGraphNode* node, vector&lt;<span class="keyword">int</span>&gt;&amp; cur)</span> </span>&#123;</span><br><span class="line">    vis.<span class="built_in">insert</span>(node);</span><br><span class="line">    cur.<span class="built_in">push_back</span>(node-&gt;label);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; node-&gt;neighbors.<span class="built_in">size</span>(); i++) &#123;</span><br><span class="line">        <span class="keyword">if</span>(vis.<span class="built_in">count</span>(node-&gt;neighbors[i])) <span class="keyword">continue</span>;</span><br><span class="line">        <span class="built_in">dfs</span>(node-&gt;neighbors[i], cur);</span><br><span class="line">    &#125;      </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="2、BFS解法"><a href="#2、BFS解法" class="headerlink" title="2、BFS解法"></a>2、BFS解法</h3><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">unordered_set&lt;UndirectedGraphNode*&gt; vis;</span><br><span class="line">vector&lt;vector&lt;<span class="keyword">int</span>&gt;&gt; <span class="built_in">connectedSet</span>(vector&lt;UndirectedGraphNode*&gt; nodes) &#123;</span><br><span class="line">    <span class="comment">// write your code here</span></span><br><span class="line">    vector&lt;vector&lt;<span class="keyword">int</span>&gt; &gt; res;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nodes.<span class="built_in">size</span>(); i++) &#123;</span><br><span class="line">        <span class="keyword">if</span>(!vis.<span class="built_in">count</span>(nodes[i])) &#123;</span><br><span class="line">            vector&lt;<span class="keyword">int</span>&gt; cur;</span><br><span class="line">            <span class="comment">// dfs(nodes[i], cur);</span></span><br><span class="line">            <span class="built_in">bfs</span>(nodes[i], cur);</span><br><span class="line">            <span class="built_in">sort</span>(cur.<span class="built_in">begin</span>(), cur.<span class="built_in">end</span>());</span><br><span class="line">            res.<span class="built_in">push_back</span>(cur);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">bfs</span><span class="params">(UndirectedGraphNode* node, vector&lt;<span class="keyword">int</span>&gt;&amp; cur)</span> </span>&#123;</span><br><span class="line">    queue&lt;UndirectedGraphNode*&gt; q;</span><br><span class="line">    vis.<span class="built_in">insert</span>(node);</span><br><span class="line">    q.<span class="built_in">push</span>(node);</span><br><span class="line">    cur.<span class="built_in">push_back</span>(node-&gt;label);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span>(!q.<span class="built_in">empty</span>()) &#123;</span><br><span class="line">        UndirectedGraphNode* tnode = q.<span class="built_in">front</span>();</span><br><span class="line">        q.<span class="built_in">pop</span>();</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">auto</span> neighbor : tnode-&gt;neighbors) &#123;</span><br><span class="line">            <span class="keyword">if</span>(vis.<span class="built_in">count</span>(neighbor)) <span class="keyword">continue</span>;</span><br><span class="line">            q.<span class="built_in">push</span>(neighbor);</span><br><span class="line">            cur.<span class="built_in">push_back</span>(neighbor-&gt;label);</span><br><span class="line">            vis.<span class="built_in">insert</span>(neighbor);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>算法</category>
-        <category>DFS-BFS</category>
-      </categories>
-      <tags>
-        <tag>DFS—BFS</tag>
       </tags>
   </entry>
 </search>

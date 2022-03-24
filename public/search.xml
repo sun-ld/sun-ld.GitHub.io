@@ -22,29 +22,6 @@
       </tags>
   </entry>
   <entry>
-    <title>搭建自己的个人博客网站(Github+Hexo+Next)</title>
-    <url>/posts/10121.html</url>
-    <content><![CDATA[<blockquote>
-<p><strong>【道德经·第三章】</strong>不尚贤，使民不争；不贵难得之货，使民不为盗；不见（xiàn）可欲，使民心不乱。是以圣人之治，虚其心，实其腹；弱其志，强其骨。常使民无知无欲，使夫（fú）智者不敢为也。 </p>
-</blockquote>
-<!-- ![](hello.jpg) -->
-
-<span id="more"></span>
-
-<p>Hexo博客搭建及主题美化，来自<a href="https://yuumiy.github.io/posts/2789.html">岛田悠米的博客。</a></p>
-<blockquote>
-<p>位我上者，灿烂星空；道德律令，在我心中。</p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>工具</category>
-        <category>Hexo</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>二叉树的遍历</title>
     <url>/posts/12682.html</url>
     <content><![CDATA[<blockquote>
@@ -72,6 +49,29 @@
       </categories>
       <tags>
         <tag>数据结构</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>搭建自己的个人博客网站(Github+Hexo+Next)</title>
+    <url>/posts/10121.html</url>
+    <content><![CDATA[<blockquote>
+<p><strong>【道德经·第三章】</strong>不尚贤，使民不争；不贵难得之货，使民不为盗；不见（xiàn）可欲，使民心不乱。是以圣人之治，虚其心，实其腹；弱其志，强其骨。常使民无知无欲，使夫（fú）智者不敢为也。 </p>
+</blockquote>
+<!-- ![](hello.jpg) -->
+
+<span id="more"></span>
+
+<p>Hexo博客搭建及主题美化，来自<a href="https://yuumiy.github.io/posts/2789.html">岛田悠米的博客。</a></p>
+<blockquote>
+<p>位我上者，灿烂星空；道德律令，在我心中。</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>工具</category>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
       </tags>
   </entry>
   <entry>
@@ -543,6 +543,30 @@
       </tags>
   </entry>
   <entry>
+    <title>DFS和BFS套路总结</title>
+    <url>/posts/51190.html</url>
+    <content><![CDATA[<blockquote>
+<p><strong>【道德经·第十五章】</strong>豫焉若冬涉川，犹兮若畏四邻，俨兮其若容，涣兮若冰之将释，敦兮其若朴，旷兮其若谷，混兮其若浊。孰能浊以静之徐清？孰能安以久动之徐生？</p>
+</blockquote>
+<span id="more"></span>
+
+<h2 id="431-找无向图的连通块"><a href="#431-找无向图的连通块" class="headerlink" title="431. 找无向图的连通块"></a><a href="">431. 找无向图的连通块</a></h2><blockquote>
+<p>找出无向图中所有的连通块。<br>图中的每个节点包含一个label属性和一个邻接点的列表。（一个无向图的连通块是一个子图，其中任意两个顶点通过路径相连，且不与整个图中的其它顶点相连。）<br>你需要返回 label 集合的列表.</p>
+</blockquote>
+<h3 id="1、DFS解法"><a href="#1、DFS解法" class="headerlink" title="1、DFS解法"></a>1、DFS解法</h3><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">unordered_set&lt;UndirectedGraphNode*&gt; vis;</span><br><span class="line">vector&lt;vector&lt;<span class="keyword">int</span>&gt;&gt; <span class="built_in">connectedSet</span>(vector&lt;UndirectedGraphNode*&gt; nodes) &#123;</span><br><span class="line">    <span class="comment">// write your code here</span></span><br><span class="line">    vector&lt;vector&lt;<span class="keyword">int</span>&gt; &gt; res;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nodes.<span class="built_in">size</span>(); i++) &#123;</span><br><span class="line">        <span class="keyword">if</span>(!vis.<span class="built_in">count</span>(nodes[i])) &#123;</span><br><span class="line">            vector&lt;<span class="keyword">int</span>&gt; cur;</span><br><span class="line">            <span class="built_in">dfs</span>(nodes[i], cur);</span><br><span class="line">            <span class="built_in">sort</span>(cur.<span class="built_in">begin</span>(), cur.<span class="built_in">end</span>());</span><br><span class="line">            res.<span class="built_in">push_back</span>(cur);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(UndirectedGraphNode* node, vector&lt;<span class="keyword">int</span>&gt;&amp; cur)</span> </span>&#123;</span><br><span class="line">    vis.<span class="built_in">insert</span>(node);</span><br><span class="line">    cur.<span class="built_in">push_back</span>(node-&gt;label);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; node-&gt;neighbors.<span class="built_in">size</span>(); i++) &#123;</span><br><span class="line">        <span class="keyword">if</span>(vis.<span class="built_in">count</span>(node-&gt;neighbors[i])) <span class="keyword">continue</span>;</span><br><span class="line">        <span class="built_in">dfs</span>(node-&gt;neighbors[i], cur);</span><br><span class="line">    &#125;      </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="2、BFS解法"><a href="#2、BFS解法" class="headerlink" title="2、BFS解法"></a>2、BFS解法</h3><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">unordered_set&lt;UndirectedGraphNode*&gt; vis;</span><br><span class="line">vector&lt;vector&lt;<span class="keyword">int</span>&gt;&gt; <span class="built_in">connectedSet</span>(vector&lt;UndirectedGraphNode*&gt; nodes) &#123;</span><br><span class="line">    <span class="comment">// write your code here</span></span><br><span class="line">    vector&lt;vector&lt;<span class="keyword">int</span>&gt; &gt; res;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nodes.<span class="built_in">size</span>(); i++) &#123;</span><br><span class="line">        <span class="keyword">if</span>(!vis.<span class="built_in">count</span>(nodes[i])) &#123;</span><br><span class="line">            vector&lt;<span class="keyword">int</span>&gt; cur;</span><br><span class="line">            <span class="comment">// dfs(nodes[i], cur);</span></span><br><span class="line">            <span class="built_in">bfs</span>(nodes[i], cur);</span><br><span class="line">            <span class="built_in">sort</span>(cur.<span class="built_in">begin</span>(), cur.<span class="built_in">end</span>());</span><br><span class="line">            res.<span class="built_in">push_back</span>(cur);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">bfs</span><span class="params">(UndirectedGraphNode* node, vector&lt;<span class="keyword">int</span>&gt;&amp; cur)</span> </span>&#123;</span><br><span class="line">    queue&lt;UndirectedGraphNode*&gt; q;</span><br><span class="line">    vis.<span class="built_in">insert</span>(node);</span><br><span class="line">    q.<span class="built_in">push</span>(node);</span><br><span class="line">    cur.<span class="built_in">push_back</span>(node-&gt;label);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span>(!q.<span class="built_in">empty</span>()) &#123;</span><br><span class="line">        UndirectedGraphNode* tnode = q.<span class="built_in">front</span>();</span><br><span class="line">        q.<span class="built_in">pop</span>();</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">auto</span> neighbor : tnode-&gt;neighbors) &#123;</span><br><span class="line">            <span class="keyword">if</span>(vis.<span class="built_in">count</span>(neighbor)) <span class="keyword">continue</span>;</span><br><span class="line">            q.<span class="built_in">push</span>(neighbor);</span><br><span class="line">            cur.<span class="built_in">push_back</span>(neighbor-&gt;label);</span><br><span class="line">            vis.<span class="built_in">insert</span>(neighbor);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>算法</category>
+        <category>DFS-BFS</category>
+      </categories>
+      <tags>
+        <tag>DFS—BFS</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>并查集</title>
     <url>/posts/46268.html</url>
     <content><![CDATA[<blockquote>
@@ -611,27 +635,31 @@
       </tags>
   </entry>
   <entry>
-    <title>DFS和BFS套路总结</title>
-    <url>/posts/51190.html</url>
+    <title>Dijkstra单源最短路径</title>
+    <url>/posts/41510.html</url>
     <content><![CDATA[<blockquote>
-<p><strong>【道德经·第十五章】</strong>豫焉若冬涉川，犹兮若畏四邻，俨兮其若容，涣兮若冰之将释，敦兮其若朴，旷兮其若谷，混兮其若浊。孰能浊以静之徐清？孰能安以久动之徐生？</p>
+<p><strong>【道德经·第十八章】</strong>大道废，有仁义；智慧出，有大伪；六亲不和，有孝慈；国家昏乱，有忠臣。</p>
 </blockquote>
 <span id="more"></span>
 
-<h2 id="431-找无向图的连通块"><a href="#431-找无向图的连通块" class="headerlink" title="431. 找无向图的连通块"></a><a href="">431. 找无向图的连通块</a></h2><blockquote>
-<p>找出无向图中所有的连通块。<br>图中的每个节点包含一个label属性和一个邻接点的列表。（一个无向图的连通块是一个子图，其中任意两个顶点通过路径相连，且不与整个图中的其它顶点相连。）<br>你需要返回 label 集合的列表.</p>
+<blockquote>
+<p>迪杰斯特拉算法(Dijkstra)是由荷兰计算机科学家<strong>狄克斯特拉</strong>于1959年提出的，因此又叫狄克斯特拉算法。是从<em>一个顶点到其余各顶点的最短路径算法</em>，解决的是有权图中最短路径问题。<br>迪杰斯特拉算法主要特点是<strong>从起始点</strong>开始，采用<em>贪心算法</em>的策略，每次遍历到始点距离最近且未访问过的顶点的邻接节点，直到扩展到终点为止。  ——来源：<a href="https://baike.baidu.com/item/%E8%BF%AA%E5%85%8B%E6%96%AF%E7%89%B9%E6%8B%89%E7%AE%97%E6%B3%95/23665989">百度百科</a></p>
 </blockquote>
-<h3 id="1、DFS解法"><a href="#1、DFS解法" class="headerlink" title="1、DFS解法"></a>1、DFS解法</h3><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">unordered_set&lt;UndirectedGraphNode*&gt; vis;</span><br><span class="line">vector&lt;vector&lt;<span class="keyword">int</span>&gt;&gt; <span class="built_in">connectedSet</span>(vector&lt;UndirectedGraphNode*&gt; nodes) &#123;</span><br><span class="line">    <span class="comment">// write your code here</span></span><br><span class="line">    vector&lt;vector&lt;<span class="keyword">int</span>&gt; &gt; res;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nodes.<span class="built_in">size</span>(); i++) &#123;</span><br><span class="line">        <span class="keyword">if</span>(!vis.<span class="built_in">count</span>(nodes[i])) &#123;</span><br><span class="line">            vector&lt;<span class="keyword">int</span>&gt; cur;</span><br><span class="line">            <span class="built_in">dfs</span>(nodes[i], cur);</span><br><span class="line">            <span class="built_in">sort</span>(cur.<span class="built_in">begin</span>(), cur.<span class="built_in">end</span>());</span><br><span class="line">            res.<span class="built_in">push_back</span>(cur);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(UndirectedGraphNode* node, vector&lt;<span class="keyword">int</span>&gt;&amp; cur)</span> </span>&#123;</span><br><span class="line">    vis.<span class="built_in">insert</span>(node);</span><br><span class="line">    cur.<span class="built_in">push_back</span>(node-&gt;label);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; node-&gt;neighbors.<span class="built_in">size</span>(); i++) &#123;</span><br><span class="line">        <span class="keyword">if</span>(vis.<span class="built_in">count</span>(node-&gt;neighbors[i])) <span class="keyword">continue</span>;</span><br><span class="line">        <span class="built_in">dfs</span>(node-&gt;neighbors[i], cur);</span><br><span class="line">    &#125;      </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="PAT甲级·1003-Emergency-25-分"><a href="#PAT甲级·1003-Emergency-25-分" class="headerlink" title="PAT甲级·1003 Emergency (25 分)"></a><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805523835109376">PAT甲级·1003 Emergency (25 分)</a></h2><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>As an emergency rescue team leader of a city, you are given a special map of your country. The map shows several scattered cities connected by some roads. Amount of rescue teams in each city and the length of each road between any pair of cities are marked on the map. When there is an emergency call to you from some other city, your job is to lead your men to the place as quickly as possible, and at the mean time, call up as many hands on the way as possible.</p>
+<h3 id="Input-Specification"><a href="#Input-Specification" class="headerlink" title="Input Specification:"></a>Input Specification:</h3><p>Each input file contains one test case. For each test case, the first line contains 4 positive integers: N (≤500) - the number of cities (and the cities are numbered from 0 to N−1), M - the number of roads, C1 and C2- the cities that you are currently in and that you must save, respectively. The next line contains N integers, where the i-th integer is the number of rescue teams in the i-th city. Then M lines follow, each describes a road with three integers c1, c2 and L, which are the pair of cities connected by a road and the length of that road, respectively. It is guaranteed that there exists at least one path from C1 to C2.</p>
+<h3 id="Output-Specification"><a href="#Output-Specification" class="headerlink" title="Output Specification:"></a>Output Specification:</h3><p>For each test case, print in one line two numbers: the number of different shortest paths between C1 and C2, and the maximum amount of rescue teams you can possibly gather. All the numbers in a line must be separated by exactly one space, and there is no extra space allowed at the end of a line.</p>
+<h3 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input:"></a>Sample Input:</h3><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="number">5</span> <span class="number">6</span> <span class="number">0</span> <span class="number">2</span></span><br><span class="line"><span class="number">1</span> <span class="number">2</span> <span class="number">1</span> <span class="number">5</span> <span class="number">3</span></span><br><span class="line"><span class="number">0</span> <span class="number">1</span> <span class="number">1</span></span><br><span class="line"><span class="number">0</span> <span class="number">2</span> <span class="number">2</span></span><br><span class="line"><span class="number">0</span> <span class="number">3</span> <span class="number">1</span></span><br><span class="line"><span class="number">1</span> <span class="number">2</span> <span class="number">1</span></span><br><span class="line"><span class="number">2</span> <span class="number">4</span> <span class="number">1</span></span><br><span class="line"><span class="number">3</span> <span class="number">4</span> <span class="number">1</span></span><br></pre></td></tr></table></figure>
 
-<h3 id="2、BFS解法"><a href="#2、BFS解法" class="headerlink" title="2、BFS解法"></a>2、BFS解法</h3><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">unordered_set&lt;UndirectedGraphNode*&gt; vis;</span><br><span class="line">vector&lt;vector&lt;<span class="keyword">int</span>&gt;&gt; <span class="built_in">connectedSet</span>(vector&lt;UndirectedGraphNode*&gt; nodes) &#123;</span><br><span class="line">    <span class="comment">// write your code here</span></span><br><span class="line">    vector&lt;vector&lt;<span class="keyword">int</span>&gt; &gt; res;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nodes.<span class="built_in">size</span>(); i++) &#123;</span><br><span class="line">        <span class="keyword">if</span>(!vis.<span class="built_in">count</span>(nodes[i])) &#123;</span><br><span class="line">            vector&lt;<span class="keyword">int</span>&gt; cur;</span><br><span class="line">            <span class="comment">// dfs(nodes[i], cur);</span></span><br><span class="line">            <span class="built_in">bfs</span>(nodes[i], cur);</span><br><span class="line">            <span class="built_in">sort</span>(cur.<span class="built_in">begin</span>(), cur.<span class="built_in">end</span>());</span><br><span class="line">            res.<span class="built_in">push_back</span>(cur);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">bfs</span><span class="params">(UndirectedGraphNode* node, vector&lt;<span class="keyword">int</span>&gt;&amp; cur)</span> </span>&#123;</span><br><span class="line">    queue&lt;UndirectedGraphNode*&gt; q;</span><br><span class="line">    vis.<span class="built_in">insert</span>(node);</span><br><span class="line">    q.<span class="built_in">push</span>(node);</span><br><span class="line">    cur.<span class="built_in">push_back</span>(node-&gt;label);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span>(!q.<span class="built_in">empty</span>()) &#123;</span><br><span class="line">        UndirectedGraphNode* tnode = q.<span class="built_in">front</span>();</span><br><span class="line">        q.<span class="built_in">pop</span>();</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">auto</span> neighbor : tnode-&gt;neighbors) &#123;</span><br><span class="line">            <span class="keyword">if</span>(vis.<span class="built_in">count</span>(neighbor)) <span class="keyword">continue</span>;</span><br><span class="line">            q.<span class="built_in">push</span>(neighbor);</span><br><span class="line">            cur.<span class="built_in">push_back</span>(neighbor-&gt;label);</span><br><span class="line">            vis.<span class="built_in">insert</span>(neighbor);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output:"></a>Sample Output:</h3><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="number">2</span> <span class="number">4</span></span><br></pre></td></tr></table></figure>
 
+<h3 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h3><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// ios_base::sync_with_stdio(false);</span></span><br><span class="line">    <span class="comment">// cin.tie(0);</span></span><br><span class="line">    <span class="keyword">int</span> e[<span class="number">510</span>][<span class="number">510</span>], teamcnt[<span class="number">510</span>], dist[<span class="number">510</span>], w[<span class="number">510</span>], num[<span class="number">510</span>];</span><br><span class="line">    <span class="keyword">bool</span> visited[<span class="number">510</span>];</span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">int</span> inf = <span class="number">99999999</span>;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">fill</span>(e[<span class="number">0</span>], e[<span class="number">0</span>] + <span class="number">510</span>*<span class="number">510</span>, inf);</span><br><span class="line">    <span class="built_in">fill</span>(dist, dist + <span class="number">510</span>, inf);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> n, m, c1, c2;</span><br><span class="line">    cin &gt;&gt; n &gt;&gt; m &gt;&gt; c1 &gt;&gt; c2;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; ++i) </span><br><span class="line">        cin &gt;&gt; teamcnt[i];</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> a, b, c;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m; ++i) &#123;</span><br><span class="line">        cin &gt;&gt; a &gt;&gt; b &gt;&gt; c;</span><br><span class="line">        e[a][b] = e[b][a] = c;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    dist[c1] = <span class="number">0</span>;</span><br><span class="line">    w[c1] = teamcnt[c1];</span><br><span class="line">    num[c1] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; ++i) &#123;</span><br><span class="line">        <span class="keyword">int</span> u = <span class="number">-1</span>, minn = inf;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; n; ++j) &#123;</span><br><span class="line">            <span class="keyword">if</span>(!visited[j] &amp;&amp; dist[j] &lt; minn) &#123;</span><br><span class="line">                u = j;</span><br><span class="line">                minn = dist[j];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(u == <span class="number">-1</span>) <span class="keyword">break</span>;</span><br><span class="line">        visited[u] = <span class="literal">true</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> v = <span class="number">0</span>; v &lt; n; ++v) &#123;</span><br><span class="line">            <span class="keyword">if</span>(!visited[v] &amp;&amp; e[u][v] != inf) &#123;</span><br><span class="line">                <span class="keyword">if</span>(dist[u] + e[u][v] &lt; dist[v]) &#123;</span><br><span class="line">                    dist[v] = dist[u] + e[u][v];</span><br><span class="line">                    w[v] = w[u] + teamcnt[v];</span><br><span class="line">                    num[v] = num[u];</span><br><span class="line">                &#125; <span class="keyword">else</span> <span class="keyword">if</span>(dist[u] + e[u][v] == dist[v]) &#123;</span><br><span class="line">                    num[v] = num[v] + num[u];</span><br><span class="line">                    <span class="keyword">if</span>(w[u] + teamcnt[v] &gt; w[v]) </span><br><span class="line">                        w[v] = w[u] + teamcnt[v];</span><br><span class="line">                &#125;</span><br><span class="line">                </span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    cout &lt;&lt; num[c2] &lt;&lt; <span class="string">&quot; &quot;</span> &lt;&lt; w[c2] &lt;&lt; <span class="string">&quot;\n&quot;</span>;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">system</span>(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>算法</category>
-        <category>DFS-BFS</category>
+        <category>dijkstra</category>
       </categories>
       <tags>
-        <tag>DFS—BFS</tag>
+        <tag>dijkstra</tag>
       </tags>
   </entry>
 </search>

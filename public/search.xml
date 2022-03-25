@@ -318,7 +318,7 @@
       </tags>
   </entry>
   <entry>
-    <title>滑动窗口算法总结</title>
+    <title>滑动窗口</title>
     <url>/posts/39893.html</url>
     <content><![CDATA[<blockquote>
 <p><strong>【道德经·第九章】</strong>持而盈之，不如其已。揣(chuǎi)而锐之，不可长保。金玉满堂，莫之能守。富贵而骄，自遗（yí）其咎。功成身退，天之道。</p>
@@ -509,11 +509,11 @@
         <category>链表</category>
       </categories>
       <tags>
-        <tag>链表</tag>
+        <tag>数据结构</tag>
       </tags>
   </entry>
   <entry>
-    <title>LRU和LFU缓存实现</title>
+    <title>LRU\LFU缓存</title>
     <url>/posts/13455.html</url>
     <content><![CDATA[<blockquote>
 <p><strong>【道德经·第十三章】</strong>宠辱若惊，贵大患若身。何谓宠辱若惊？宠为下，得之若惊，失之若惊，是谓宠辱若惊。何谓贵大患若身？吾所以有大患者，为吾有身，及吾无身，吾有何患！</p>
@@ -539,11 +539,11 @@
         <category>LRU</category>
       </categories>
       <tags>
-        <tag>LRU</tag>
+        <tag>数据结构</tag>
       </tags>
   </entry>
   <entry>
-    <title>DFS和BFS套路总结</title>
+    <title>DFS\BFS算法</title>
     <url>/posts/51190.html</url>
     <content><![CDATA[<blockquote>
 <p><strong>【道德经·第十五章】</strong>豫焉若冬涉川，犹兮若畏四邻，俨兮其若容，涣兮若冰之将释，敦兮其若朴，旷兮其若谷，混兮其若浊。孰能浊以静之徐清？孰能安以久动之徐生？</p>
@@ -563,7 +563,7 @@
         <category>DFS-BFS</category>
       </categories>
       <tags>
-        <tag>DFS—BFS</tag>
+        <tag>算法</tag>
       </tags>
   </entry>
   <entry>
@@ -599,7 +599,7 @@
         <category>并查集</category>
       </categories>
       <tags>
-        <tag>并查集</tag>
+        <tag>数据结构</tag>
       </tags>
   </entry>
   <entry>
@@ -631,11 +631,11 @@
         <category>前缀树</category>
       </categories>
       <tags>
-        <tag>Trie</tag>
+        <tag>数据结构</tag>
       </tags>
   </entry>
   <entry>
-    <title>Dijkstra单源最短路径</title>
+    <title>Dijkstra算法</title>
     <url>/posts/41510.html</url>
     <content><![CDATA[<blockquote>
 <p><strong>【道德经·第十八章】</strong>大道废，有仁义；智慧出，有大伪；六亲不和，有孝慈；国家昏乱，有忠臣。</p>
@@ -659,7 +659,7 @@
         <category>dijkstra</category>
       </categories>
       <tags>
-        <tag>dijkstra</tag>
+        <tag>算法</tag>
       </tags>
   </entry>
 </search>

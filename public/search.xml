@@ -578,7 +578,7 @@
 <span id="more"></span>
 
 <blockquote>
-<p>本文总结一下并查集在实际问题中的应用，体会一下并查集的精巧的构思^.^。<a href="https://labuladong.gitee.io/algo/2/20/40/">并查集的教程——来自labuladong</a></p>
+<p>本文总结一下并查集在实际问题中的应用，体会一下并查集的精巧的构思^.^。<br><a href="https://labuladong.gitee.io/algo/2/20/40/">并查集的教程——来自labuladong</a></p>
 </blockquote>
 <h2 id="128-最长连续序列"><a href="#128-最长连续序列" class="headerlink" title="128. 最长连续序列"></a><a href="https://leetcode-cn.com/problems/longest-consecutive-sequence/">128. 最长连续序列</a></h2><blockquote>
 <p>给定一个未排序的整数数组 nums ，找出数字连续的最长序列（不要求序列元素在原数组中连续）的长度。请你设计并实现时间复杂度为 O(n) 的算法解决此问题。</p>
@@ -786,7 +786,7 @@
     <title>基本计算器</title>
     <url>/posts/44719.html</url>
     <content><![CDATA[<blockquote>
-<p><strong>【道德经·第二十三章】</strong>同于道者，道亦乐得之；同于德者，德亦乐得之；同于失者，失亦乐得之。信不足焉，有不信焉！</p>
+<p><strong>【道德经·第二十三章】</strong>希言自然。故飘风不终朝，骤雨不终日，孰为此者？天地。天地尚不能久，而况于人乎？故从事于道者同于道；德者同于德；失者同于失。同于道者，道亦乐得之；同于德者，德亦乐得之；同于失者，失亦乐得之。信不足焉，有不信焉！</p>
 </blockquote>
 <span id="more"></span>
 

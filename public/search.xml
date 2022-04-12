@@ -48,7 +48,7 @@
         <category>二叉树</category>
       </categories>
       <tags>
-        <tag>数据结构</tag>
+        <tag>二叉树</tag>
       </tags>
   </entry>
   <entry>
@@ -158,7 +158,7 @@
         <category>排序</category>
       </categories>
       <tags>
-        <tag>算法</tag>
+        <tag>排序</tag>
       </tags>
   </entry>
   <entry>
@@ -208,7 +208,7 @@
         <category>罗大佑</category>
       </categories>
       <tags>
-        <tag>音乐</tag>
+        <tag>罗大佑</tag>
       </tags>
   </entry>
   <entry>
@@ -314,7 +314,7 @@
         <category>二叉树</category>
       </categories>
       <tags>
-        <tag>数据结构</tag>
+        <tag>二叉树</tag>
       </tags>
   </entry>
   <entry>
@@ -359,7 +359,7 @@
         <category>滑动窗口</category>
       </categories>
       <tags>
-        <tag>算法</tag>
+        <tag>滑动窗口</tag>
       </tags>
   </entry>
   <entry>
@@ -414,11 +414,11 @@
 </blockquote>
 ]]></content>
       <categories>
-        <category>面试</category>
+        <category>面经</category>
         <category>Microsoft</category>
       </categories>
       <tags>
-        <tag>面试</tag>
+        <tag>面经</tag>
       </tags>
   </entry>
   <entry>
@@ -509,7 +509,7 @@
         <category>链表</category>
       </categories>
       <tags>
-        <tag>数据结构</tag>
+        <tag>链表</tag>
       </tags>
   </entry>
   <entry>
@@ -535,11 +535,11 @@
 </blockquote>
 ]]></content>
       <categories>
-        <category>算法</category>
+        <category>数据结构</category>
         <category>LRU</category>
       </categories>
       <tags>
-        <tag>数据结构</tag>
+        <tag>LRU</tag>
       </tags>
   </entry>
   <entry>
@@ -578,7 +578,7 @@
         <category>并查集</category>
       </categories>
       <tags>
-        <tag>数据结构</tag>
+        <tag>并查集</tag>
       </tags>
   </entry>
   <entry>
@@ -613,7 +613,7 @@
         <category>前缀树</category>
       </categories>
       <tags>
-        <tag>数据结构</tag>
+        <tag>前缀树</tag>
       </tags>
   </entry>
   <entry>
@@ -645,7 +645,7 @@
         <category>dijkstra</category>
       </categories>
       <tags>
-        <tag>算法</tag>
+        <tag>dijkstra</tag>
       </tags>
   </entry>
   <entry>
@@ -670,7 +670,7 @@
         <category>正则表达式</category>
       </categories>
       <tags>
-        <tag>算法</tag>
+        <tag>正则表达式</tag>
       </tags>
   </entry>
   <entry>
@@ -727,7 +727,7 @@
         <category>动态规划</category>
       </categories>
       <tags>
-        <tag>算法</tag>
+        <tag>动态规划</tag>
       </tags>
   </entry>
   <entry>
@@ -756,10 +756,10 @@
 ]]></content>
       <categories>
         <category>算法</category>
-        <category>topk</category>
+        <category>k-th</category>
       </categories>
       <tags>
-        <tag>算法</tag>
+        <tag>k-th</tag>
       </tags>
   </entry>
   <entry>
@@ -793,7 +793,7 @@
         <category>基本计算器</category>
       </categories>
       <tags>
-        <tag>算法</tag>
+        <tag>基本计算器</tag>
       </tags>
   </entry>
   <entry>
@@ -851,7 +851,38 @@
         <category>DFS</category>
       </categories>
       <tags>
-        <tag>算法</tag>
+        <tag>DFS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>链表减法</title>
+    <url>/posts/27546.html</url>
+    <content><![CDATA[<blockquote>
+<p><strong>【道德经·第二十四章】</strong>企者不立，跨者不行；自见者不明；自是者不彰；自伐者无功；自矜者不长。其在道也，曰余食赘形。物或恶之，故有道者不处。</p>
+</blockquote>
+<span id="more"></span>
+
+<blockquote>
+<p>Given two linked lists that represent two large positive numbers. Subtract the smaller number from the larger one and return the difference as a linked list. Note that the input lists may be in any order, but we always need to subtract smaller from the larger ones.<br>It may be assumed that there are no extra leading zeros in input lists.<br>文章来源：<a href="https://www.geeksforgeeks.org/subtract-two-numbers-represented-as-linked-lists/">GeeksForGeeks</a></p>
+</blockquote>
+<p>示例：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">Input: l1 = <span class="number">1</span> -&gt; <span class="number">0</span> -&gt; <span class="number">0</span> -&gt; <span class="literal">NULL</span>,  l2 = <span class="number">1</span> -&gt; <span class="literal">NULL</span></span><br><span class="line">Output: <span class="number">0</span>-&gt;<span class="number">9</span>-&gt;<span class="number">9</span>-&gt;<span class="literal">NULL</span></span><br><span class="line">Explanation: Number represented as </span><br><span class="line">lists are <span class="number">100</span> <span class="keyword">and</span> <span class="number">1</span>, so <span class="number">100</span> - <span class="number">1</span> is <span class="number">099</span></span><br><span class="line"></span><br><span class="line">Input: l1 = <span class="number">7</span>-&gt; <span class="number">8</span> -&gt; <span class="number">6</span> -&gt; <span class="literal">NULL</span>,  l2 = <span class="number">7</span> -&gt; <span class="number">8</span> -&gt; <span class="number">9</span> <span class="literal">NULL</span></span><br><span class="line">Output: <span class="number">3</span>-&gt;<span class="literal">NULL</span></span><br><span class="line">Explanation: Number represented as </span><br><span class="line">lists are <span class="number">786</span> <span class="keyword">and</span>  <span class="number">789</span>, so <span class="number">789</span> - <span class="number">786</span> is <span class="number">3</span>, </span><br><span class="line">as the smaller value is subtracted from </span><br><span class="line">the larger one.</span><br></pre></td></tr></table></figure>
+<p>思路：</p>
+<ol>
+<li>Calculate sizes of given two linked lists.</li>
+<li>If sizes are not the same, then append zeros in the smaller linked list.</li>
+<li>If the size is the same, then follow the below steps:</li>
+<li>Find the smaller valued linked list.</li>
+<li>One by one subtract nodes of the smaller-sized linked list from the larger size. Keep track of borrow while subtracting.</li>
+</ol>
+<p>代码实现：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">// C++ program to subtract smaller valued list from</span></span><br><span class="line"><span class="comment">// larger valued list and return result as a list.</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="comment">// A linked List Node</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Node</span> &#123;</span></span><br><span class="line">	<span class="keyword">int</span> data;</span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">Node</span>* <span class="title">next</span>;</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// A utility which creates Node.</span></span><br><span class="line"><span class="function">Node* <span class="title">newNode</span><span class="params">(<span class="keyword">int</span> data)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	Node* temp = <span class="keyword">new</span> Node;</span><br><span class="line">	temp-&gt;data = data;</span><br><span class="line">	temp-&gt;next = <span class="literal">NULL</span>;</span><br><span class="line">	<span class="keyword">return</span> temp;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* A utility function to get length</span></span><br><span class="line"><span class="comment">of linked list */</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">getLength</span><span class="params">(Node* Node)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> size = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">while</span> (Node != <span class="literal">NULL</span>) &#123;</span><br><span class="line">		Node = Node-&gt;next;</span><br><span class="line">		size++;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> size;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* A Utility that padds zeros in front of the</span></span><br><span class="line"><span class="comment">Node, with the given diff */</span></span><br><span class="line"><span class="function">Node* <span class="title">paddZeros</span><span class="params">(Node* sNode, <span class="keyword">int</span> diff)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (sNode == <span class="literal">NULL</span>)</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line"></span><br><span class="line">	Node* zHead = <span class="built_in">newNode</span>(<span class="number">0</span>);</span><br><span class="line">	diff--;</span><br><span class="line">	Node* temp = zHead;</span><br><span class="line">	<span class="keyword">while</span> (diff--) &#123;</span><br><span class="line">		temp-&gt;next = <span class="built_in">newNode</span>(<span class="number">0</span>);</span><br><span class="line">		temp = temp-&gt;next;</span><br><span class="line">	&#125;</span><br><span class="line">	temp-&gt;next = sNode;</span><br><span class="line">	<span class="keyword">return</span> zHead;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* Subtract LinkedList Helper is a recursive function,</span></span><br><span class="line"><span class="comment">move till the last Node, and subtract the digits and</span></span><br><span class="line"><span class="comment">create the Node and return the Node. If d1 &lt; d2, we</span></span><br><span class="line"><span class="comment">borrow the number from previous digit. */</span></span><br><span class="line"><span class="function">Node* <span class="title">subtractLinkedListHelper</span><span class="params">(Node* l1, Node* l2, <span class="keyword">bool</span>&amp; borrow)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (l1 == <span class="literal">NULL</span> &amp;&amp; l2 == <span class="literal">NULL</span> &amp;&amp; borrow == <span class="number">0</span>)</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line"></span><br><span class="line">	Node* previous</span><br><span class="line">		= <span class="built_in">subtractLinkedListHelper</span>(</span><br><span class="line">			l1 ? l1-&gt;next : <span class="literal">NULL</span>,</span><br><span class="line">			l2 ? l2-&gt;next : <span class="literal">NULL</span>, borrow);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">int</span> d1 = l1-&gt;data;</span><br><span class="line">	<span class="keyword">int</span> d2 = l2-&gt;data;</span><br><span class="line">	<span class="keyword">int</span> sub = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">	<span class="comment">/* if you have given the value to next digit then</span></span><br><span class="line"><span class="comment">	reduce the d1 by 1 */</span></span><br><span class="line">	<span class="keyword">if</span> (borrow) &#123;</span><br><span class="line">		d1--;</span><br><span class="line">		borrow = <span class="literal">false</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">/* If d1 &lt; d2, then borrow the number from previous digit.</span></span><br><span class="line"><span class="comment">	Add 10 to d1 and set borrow = true; */</span></span><br><span class="line">	<span class="keyword">if</span> (d1 &lt; d2) &#123;</span><br><span class="line">		borrow = <span class="literal">true</span>;</span><br><span class="line">		d1 = d1 + <span class="number">10</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">/* subtract the digits */</span></span><br><span class="line">	sub = d1 - d2;</span><br><span class="line"></span><br><span class="line">	<span class="comment">/* Create a Node with sub value */</span></span><br><span class="line">	Node* current = <span class="built_in">newNode</span>(sub);</span><br><span class="line"></span><br><span class="line">	<span class="comment">/* Set the Next pointer as Previous */</span></span><br><span class="line">	current-&gt;next = previous;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> current;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* This API subtracts two linked lists and returns the</span></span><br><span class="line"><span class="comment">linked list which shall have the subtracted result. */</span></span><br><span class="line"><span class="function">Node* <span class="title">subtractLinkedList</span><span class="params">(Node* l1, Node* l2)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="comment">// Base Case.</span></span><br><span class="line">	<span class="keyword">if</span> (l1 == <span class="literal">NULL</span> &amp;&amp; l2 == <span class="literal">NULL</span>)</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// In either of the case, get the lengths of both</span></span><br><span class="line">	<span class="comment">// Linked list.</span></span><br><span class="line">	<span class="keyword">int</span> len1 = <span class="built_in">getLength</span>(l1);</span><br><span class="line">	<span class="keyword">int</span> len2 = <span class="built_in">getLength</span>(l2);</span><br><span class="line"></span><br><span class="line">	Node *lNode = <span class="literal">NULL</span>, *sNode = <span class="literal">NULL</span>;</span><br><span class="line"></span><br><span class="line">	Node* temp1 = l1;</span><br><span class="line">	Node* temp2 = l2;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// If lengths differ, calculate the smaller Node</span></span><br><span class="line">	<span class="comment">// and padd zeros for smaller Node and ensure both</span></span><br><span class="line">	<span class="comment">// larger Node and smaller Node has equal length.</span></span><br><span class="line">	<span class="keyword">if</span> (len1 != len2) &#123;</span><br><span class="line">		lNode = len1 &gt; len2 ? l1 : l2;</span><br><span class="line">		sNode = len1 &gt; len2 ? l2 : l1;</span><br><span class="line">		sNode = <span class="built_in">paddZeros</span>(sNode, <span class="built_in">abs</span>(len1 - len2));</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">else</span> &#123;</span><br><span class="line">		<span class="comment">// If both list lengths are equal, then calculate</span></span><br><span class="line">		<span class="comment">// the larger and smaller list. If 5-6-7 &amp; 5-6-8</span></span><br><span class="line">		<span class="comment">// are linked list, then walk through linked list</span></span><br><span class="line">		<span class="comment">// at last Node as 7 &lt; 8, larger Node is 5-6-8</span></span><br><span class="line">		<span class="comment">// and smaller Node is 5-6-7.</span></span><br><span class="line">		<span class="keyword">while</span> (l1 &amp;&amp; l2) &#123;</span><br><span class="line">			<span class="keyword">if</span> (l1-&gt;data != l2-&gt;data) &#123;</span><br><span class="line">				lNode = l1-&gt;data &gt; l2-&gt;data ? temp1 : temp2;</span><br><span class="line">				sNode = l1-&gt;data &gt; l2-&gt;data ? temp2 : temp1;</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			&#125;</span><br><span class="line">			l1 = l1-&gt;next;</span><br><span class="line">			l2 = l2-&gt;next;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">// If both lNode and sNode still have NULL value,</span></span><br><span class="line">	<span class="comment">// then this means that the value of both of the given linked lists</span></span><br><span class="line">	<span class="comment">// is the same and hence we can directly return a node with value 0.</span></span><br><span class="line">	<span class="keyword">if</span>(lNode==<span class="literal">NULL</span>&amp;&amp;sNode==<span class="literal">NULL</span>)</span><br><span class="line">	&#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="built_in">newNode</span>(<span class="number">0</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">// After calculating larger and smaller Node, call</span></span><br><span class="line">	<span class="comment">// subtractLinkedListHelper which returns the subtracted</span></span><br><span class="line">	<span class="comment">// linked list.</span></span><br><span class="line">	<span class="keyword">bool</span> borrow = <span class="literal">false</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="built_in">subtractLinkedListHelper</span>(lNode, sNode, borrow);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* A utility function to print linked list */</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">printList</span><span class="params">(struct Node* Node)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">while</span> (Node != <span class="literal">NULL</span>) &#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;%d &quot;</span>, Node-&gt;data);</span><br><span class="line">		Node = Node-&gt;next;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Driver program to test above functions</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	Node* head1 = <span class="built_in">newNode</span>(<span class="number">1</span>);</span><br><span class="line">	head1-&gt;next = <span class="built_in">newNode</span>(<span class="number">0</span>);</span><br><span class="line">	head1-&gt;next-&gt;next = <span class="built_in">newNode</span>(<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">	Node* head2 = <span class="built_in">newNode</span>(<span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">	Node* result = <span class="built_in">subtractLinkedList</span>(head1, head2);</span><br><span class="line"></span><br><span class="line">	<span class="built_in">printList</span>(result);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>算法</category>
+        <category>链表相减</category>
+      </categories>
+      <tags>
+        <tag>链表相减</tag>
       </tags>
   </entry>
 </search>

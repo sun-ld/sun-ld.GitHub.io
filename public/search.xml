@@ -1048,4 +1048,29 @@
         <tag>回溯</tag>
       </tags>
   </entry>
+  <entry>
+    <title>BFS算法</title>
+    <url>/posts/28489.html</url>
+    <content><![CDATA[<blockquote>
+<p><strong>【道德经·第二十七章】</strong> 善行，无辙迹；善言，无瑕谪；善数，不用筹策；善闭，无关楗而不可开；善结，无绳约而不可解。</p>
+</blockquote>
+<span id="more"></span>
+
+<h2 id="1293-网格中的最短路径"><a href="#1293-网格中的最短路径" class="headerlink" title="1293. 网格中的最短路径"></a><a href="https://leetcode-cn.com/problems/shortest-path-in-a-grid-with-obstacles-elimination/">1293. 网格中的最短路径</a></h2><blockquote>
+<p>给你一个 m * n 的网格，其中每个单元格不是 0（空）就是 1（障碍物）。每一步，您都可以在空白单元格中上、下、左、右移动。如果您 最多 可以消除 k 个障碍物，请找出从左上角 (0, 0) 到右下角 (m-1, n-1) 的最短路径，并返回通过该路径所需的步数。如果找不到这样的路径，则返回 -1 。</p>
+</blockquote>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">vector&lt;vector&lt;<span class="keyword">int</span>&gt; &gt; dirs&#123;&#123;<span class="number">-1</span>, <span class="number">0</span>&#125;, &#123;<span class="number">0</span>, <span class="number">1</span>&#125;, &#123;<span class="number">1</span>, <span class="number">0</span>&#125;, &#123;<span class="number">0</span>, <span class="number">-1</span>&#125;&#125;;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">shortestPath</span><span class="params">(vector&lt;vector&lt;<span class="keyword">int</span>&gt;&gt;&amp; grid, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> m = grid.<span class="built_in">size</span>(), n = grid[<span class="number">0</span>].<span class="built_in">size</span>(), ans = <span class="number">0</span>;</span><br><span class="line">    vector&lt;vector&lt;<span class="keyword">int</span>&gt; &gt; <span class="built_in">vis</span>(m, vector&lt;<span class="keyword">int</span>&gt;(n, <span class="number">-1</span>));</span><br><span class="line">    </span><br><span class="line">    vis[<span class="number">0</span>][<span class="number">0</span>] = k;</span><br><span class="line">    queue&lt;vector&lt;<span class="keyword">int</span>&gt; &gt; q;</span><br><span class="line">    q.<span class="built_in">push</span>(&#123;<span class="number">0</span>, <span class="number">0</span>, k&#125;);</span><br><span class="line">    <span class="keyword">while</span>(!q.<span class="built_in">empty</span>()) &#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = q.<span class="built_in">size</span>(); i &gt; <span class="number">0</span>; i--) &#123;</span><br><span class="line">            <span class="keyword">auto</span> t = q.<span class="built_in">front</span>(); q.<span class="built_in">pop</span>();</span><br><span class="line">            <span class="keyword">if</span>(t[<span class="number">0</span>]==m<span class="number">-1</span> &amp;&amp; t[<span class="number">1</span>]==n<span class="number">-1</span>) <span class="keyword">return</span> ans;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">auto</span> dir : dirs) &#123;</span><br><span class="line">                <span class="keyword">int</span> x = t[<span class="number">0</span>]+dir[<span class="number">0</span>], y = t[<span class="number">1</span>]+dir[<span class="number">1</span>];</span><br><span class="line">                <span class="keyword">if</span>(x&lt;<span class="number">0</span> || x&gt;=m || y&lt;<span class="number">0</span> || y&gt;=n) <span class="keyword">continue</span>;</span><br><span class="line">                <span class="keyword">int</span> newK = t[<span class="number">2</span>]-grid[x][y];</span><br><span class="line">                <span class="keyword">if</span>(newK&lt;<span class="number">0</span> || newK&lt;=vis[x][y]) <span class="keyword">continue</span>;</span><br><span class="line">                vis[x][y] = newK;</span><br><span class="line">                q.<span class="built_in">push</span>(&#123;x, y, newK&#125;);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        ++ans;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">-1</span>;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>位我上者，灿烂星空；道德律令，在我心中。</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>算法</category>
+        <category>BFS</category>
+      </categories>
+      <tags>
+        <tag>BFS</tag>
+      </tags>
+  </entry>
 </search>

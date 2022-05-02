@@ -20,15 +20,15 @@
     var CONFIG = {"hostname":"sun-ld.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"./public/search.xml"};
   </script>
 
-  <meta name="description" content="【道德经·第二十八章】知其雄，守其雌，为天下溪。为天下溪，常德不离，复归于婴儿。知其白，守其黑，为天下式，为天下式，常德不忒，复归于无极。  背包问题的解题模板二维版本： 123456789101112131415161718int knapsack(int W, int N, vector&lt;int&gt;&amp; wt, vector&lt;int&gt;&amp; val) &amp;#12">
+  <meta name="description" content="【道德经·第二十八章】知其雄，守其雌，为天下溪。为天下溪，常德不离，复归于婴儿。知其白，守其黑，为天下式，为天下式，常德不忒，复归于无极。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="背包问题">
 <meta property="og:url" content="https://sun-ld.github.io/posts/60354.html">
 <meta property="og:site_name" content="仰望星空">
-<meta property="og:description" content="【道德经·第二十八章】知其雄，守其雌，为天下溪。为天下溪，常德不离，复归于婴儿。知其白，守其黑，为天下式，为天下式，常德不忒，复归于无极。  背包问题的解题模板二维版本： 123456789101112131415161718int knapsack(int W, int N, vector&lt;int&gt;&amp; wt, vector&lt;int&gt;&amp; val) &amp;#12">
+<meta property="og:description" content="【道德经·第二十八章】知其雄，守其雌，为天下溪。为天下溪，常德不离，复归于婴儿。知其白，守其黑，为天下式，为天下式，常德不忒，复归于无极。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-04-26T11:17:14.000Z">
-<meta property="article:modified_time" content="2022-05-01T13:38:52.328Z">
+<meta property="article:modified_time" content="2022-05-02T00:48:39.001Z">
 <meta property="article:author" content="仰望星空">
 <meta property="article:tag" content="背包">
 <meta name="twitter:card" content="summary">
@@ -230,7 +230,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-05-01 21:38:52" itemprop="dateModified" datetime="2022-05-01T21:38:52+08:00">2022-05-01</time>
+                <time title="修改时间：2022-05-02 08:48:39" itemprop="dateModified" datetime="2022-05-02T08:48:39+08:00">2022-05-02</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -274,6 +274,8 @@
         <blockquote>
 <p><strong>【道德经·第二十八章】</strong>知其雄，守其雌，为天下溪。为天下溪，常德不离，复归于婴儿。知其白，守其黑，为天下式，为天下式，常德不忒，复归于无极。</p>
 </blockquote>
+<span id="more"></span>
+
 <h2 id="背包问题的解题模板"><a href="#背包问题的解题模板" class="headerlink" title="背包问题的解题模板"></a>背包问题的解题模板</h2><p>二维版本：</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">knapsack</span><span class="params">(<span class="keyword">int</span> W, <span class="keyword">int</span> N, vector&lt;<span class="keyword">int</span>&gt;&amp; wt, vector&lt;<span class="keyword">int</span>&gt;&amp; val)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// base case 已初始化</span></span><br><span class="line">    vector&lt;vector&lt;<span class="keyword">int</span>&gt; &gt; <span class="built_in">dp</span>(N+<span class="number">1</span>, vector&lt;<span class="keyword">int</span>&gt;(W+<span class="number">1</span>, <span class="number">0</span>));</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= N; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> w = <span class="number">1</span>; w &lt;= W; w++) &#123;</span><br><span class="line">            <span class="keyword">if</span>(w - wt[i<span class="number">-1</span>] &lt; <span class="number">0</span>) &#123;</span><br><span class="line">                <span class="comment">// 背包容量不够了，这种情况下只能选择不装入背包</span></span><br><span class="line">                dp[i][w] = dp[i<span class="number">-1</span>][w];</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="comment">// 装入或不装入背包，择优</span></span><br><span class="line">                dp[i][w] = <span class="built_in">max</span>(dp[i<span class="number">-1</span>][w-wt[i<span class="number">-1</span>]] + val[i<span class="number">-1</span>]),</span><br><span class="line">                               dp[i<span class="number">-1</span>][w]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> dp[N][W];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -509,12 +511,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">84k</span>
+    <span title="站点总字数">81k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">1:16</span>
+    <span title="站点阅读时长">1:14</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> 和 <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">Pisces</a> 强力驱动
   </div>

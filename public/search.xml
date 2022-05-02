@@ -1081,7 +1081,7 @@
 
 <h2 id="背包问题分类"><a href="#背包问题分类" class="headerlink" title="背包问题分类"></a>背包问题分类</h2><p>首先是背包分类的模板：</p>
 <ol>
-<li> 0/1背包：外循环nums,内循环target,target倒序且target&gt;=nums[i];</li>
+<li>&nbsp;0/1背包：外循环nums,内循环target,target倒序且target&gt;=nums[i];</li>
 <li>完全背包：外循环nums,内循环target,target正序且target&gt;=nums[i];</li>
 <li>组合背包：外循环target,内循环nums,target正序且target&gt;=nums[i];</li>
 <li>分组背包：这个比较特殊，需要三重循环：外循环背包bags,内部两层循环根据题目的要求转化为1,2,3三种背包类型的模板</li>

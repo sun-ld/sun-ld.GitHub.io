@@ -28,7 +28,7 @@
 <meta property="og:description" content="【道德经·第二十九章】将欲取天下而为之，吾见其不得已。天下神器，不可为也，不可执也。为者败之，执者失之。是以圣人无为，故无败，故无失。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-05-03T02:28:05.000Z">
-<meta property="article:modified_time" content="2022-05-08T10:42:39.898Z">
+<meta property="article:modified_time" content="2022-05-08T12:25:16.993Z">
 <meta property="article:author" content="仰望星空">
 <meta property="article:tag" content="二分查找">
 <meta name="twitter:card" content="summary">
@@ -230,7 +230,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-05-08 18:42:39" itemprop="dateModified" datetime="2022-05-08T18:42:39+08:00">2022-05-08</time>
+                <time title="修改时间：2022-05-08 20:25:16" itemprop="dateModified" datetime="2022-05-08T20:25:16+08:00">2022-05-08</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -252,7 +252,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>2.3k</span>
+              <span>2.6k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -279,7 +279,13 @@
 <h2 id="153-寻找旋转排序数组中的最小值"><a href="#153-寻找旋转排序数组中的最小值" class="headerlink" title="153. 寻找旋转排序数组中的最小值"></a><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/find-minimum-in-rotated-sorted-array/">153. 寻找旋转排序数组中的最小值</a></h2><blockquote>
 <p>给你一个元素值<strong>互不相同</strong>的数组 nums ，它原来是一个升序排列的数组，并按上述情形进行了多次旋转。请你找出并返回数组中的最小元素 。</p>
 </blockquote>
-<h3 id="二分搜索法"><a href="#二分搜索法" class="headerlink" title="二分搜索法"></a>二分搜索法</h3><p>这里用中间的值 nums[mid] 和右边界值 nums[right] 进行比较，若数组没有旋转或者旋转点在左半段的时候，中间值是一定小于右边界值的，所以要去左半边继续搜索，反之则去右半段查找，最终返回 nums[right] 即可。——来自大佬<a target="_blank" rel="noopener" href="https://www.cnblogs.com/grandyang/p/4032934.html">grandyang</a></p>
+<p>示例 1：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入：nums = [<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">1</span>,<span class="number">2</span>]</span><br><span class="line">输出：<span class="number">1</span></span><br><span class="line">解释：原数组为 [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>] ，旋转 <span class="number">3</span> 次得到输入数组。</span><br></pre></td></tr></table></figure>
+<p>示例 2：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入：nums = [<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>]</span><br><span class="line">输出：<span class="number">0</span></span><br><span class="line">解释：原数组为 [<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>] ，旋转 <span class="number">4</span> 次得到输入数组。</span><br></pre></td></tr></table></figure>
+<p>示例 3：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入：nums = [<span class="number">11</span>,<span class="number">13</span>,<span class="number">15</span>,<span class="number">17</span>]</span><br><span class="line">输出：<span class="number">11</span></span><br><span class="line">解释：原数组为 [<span class="number">11</span>,<span class="number">13</span>,<span class="number">15</span>,<span class="number">17</span>] ，旋转 <span class="number">4</span> 次得到输入数组。</span><br></pre></td></tr></table></figure>
+<h3 id="二分搜索法"><a href="#二分搜索法" class="headerlink" title="二分搜索法"></a>二分搜索法</h3><p>这里用中间的值 nums[mid] 和右边界值 nums[right] 进行比较，若数组没有旋转或者旋转点在左半段的时候，中间值是一定小于右边界值的，所以要去左半边继续搜索，反之则去右半段查找，最终返回 nums[right] 即可。——来自<a target="_blank" rel="noopener" href="https://www.cnblogs.com/grandyang/p/4032934.html">grandyang</a></p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">findMin</span><span class="params">(vector&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> l = <span class="number">0</span>, r = nums.<span class="built_in">size</span>()<span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">while</span>(l &lt; r) &#123;</span><br><span class="line">        <span class="keyword">int</span> mid = l + (r-l)/<span class="number">2</span>;</span><br><span class="line">        <span class="keyword">if</span>(nums[mid] &gt; nums[r]) &#123;</span><br><span class="line">            l = mid+<span class="number">1</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            r = mid;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> nums[r];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h3 id="递归法"><a href="#递归法" class="headerlink" title="递归法"></a>递归法</h3><p>这里每次将区间 [start, end] 从中间 mid 位置分为两段，分别调用递归函数，并比较返回值，每次取返回值较小的那个即可，参见代码如下：</p>
@@ -288,6 +294,8 @@
 <h2 id="154-寻找旋转排序数组中的最小值-II"><a href="#154-寻找旋转排序数组中的最小值-II" class="headerlink" title="154. 寻找旋转排序数组中的最小值 II"></a><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/find-minimum-in-rotated-sorted-array-ii/">154. 寻找旋转排序数组中的最小值 II</a></h2><blockquote>
 <p>给你一个可能存在<strong>重复</strong>元素值的数组 nums ，它原来是一个升序排列的数组，并按上述情形进行了多次旋转。请你找出并返回数组中的最小元素 。</p>
 </blockquote>
+<p>示例 1：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">输入：nums = [<span class="number">1</span>,<span class="number">3</span>,<span class="number">5</span>]</span><br><span class="line">输出：<span class="number">1</span></span><br><span class="line">示例 <span class="number">2</span>：</span><br><span class="line">```cpp</span><br><span class="line">输入：nums = [<span class="number">2</span>,<span class="number">2</span>,<span class="number">2</span>,<span class="number">0</span>,<span class="number">1</span>]</span><br><span class="line">输出：<span class="number">0</span></span><br></pre></td></tr></table></figure>
 <h3 id="二分查找"><a href="#二分查找" class="headerlink" title="二分查找"></a>二分查找</h3><p>当第一个数字和最后一个数字，还有中间那个数字全部相等的时候，将右指针左移一位（或者将左指针右移一位），略过一个相同数字，这对结果不会产生影响，因为只是去掉了一个相同的，然后对剩余的部分继续用二分查找法。——来自<a target="_blank" rel="noopener" href="https://www.cnblogs.com/grandyang/p/4040438.html">grandyang</a></p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">findMin</span><span class="params">(vector&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> l = <span class="number">0</span>, r = nums.<span class="built_in">size</span>()<span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">while</span>(l &lt; r) &#123;</span><br><span class="line">        <span class="keyword">int</span> mid = l + (r-l)/<span class="number">2</span>;</span><br><span class="line">        <span class="keyword">if</span>(nums[mid] &gt; nums[r]) &#123;</span><br><span class="line">            l = mid+<span class="number">1</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span>(nums[mid] &lt; nums[r])&#123;</span><br><span class="line">            r = mid;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            --r;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> nums[r];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 

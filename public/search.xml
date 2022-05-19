@@ -1102,6 +1102,9 @@
     <content><![CDATA[<blockquote>
 <p><strong>【道德经·第二十八章】</strong>知其雄，守其雌，为天下溪。为天下溪，常德不离，复归于婴儿。知其白，守其黑，为天下式，为天下式，常德不忒，复归于无极。</p>
 </blockquote>
+<blockquote>
+<p>本文参考资料来自<a href="https://leetcode-cn.com/problems/last-stone-weight-ii/solution/yi-pian-wen-zhang-chi-tou-bei-bao-wen-ti-5lfv/">此处</a></p>
+</blockquote>
 <span id="more"></span>
 
 <h2 id="背包问题的解题模板"><a href="#背包问题的解题模板" class="headerlink" title="背包问题的解题模板"></a>背包问题的解题模板</h2><p>二维版本：</p>
@@ -1159,6 +1162,12 @@
 <p>考虑顺序的组合问题：外循环target,内循环nums,应用状态方程3</p>
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">combinationSum4</span><span class="params">(vector&lt;<span class="keyword">int</span>&gt; &amp;nums, <span class="keyword">int</span> target)</span> </span>&#123;</span><br><span class="line">    <span class="function">vector&lt;<span class="keyword">int</span>&gt; <span class="title">dp</span><span class="params">(target + <span class="number">1</span>)</span></span>;</span><br><span class="line">    dp[<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= target; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> num : nums) &#123;</span><br><span class="line">            <span class="keyword">if</span> (num &lt;= i) </span><br><span class="line">                dp[i] += dp[i - num];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> dp[target];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+<h2 id="爬楼梯问题"><a href="#爬楼梯问题" class="headerlink" title="爬楼梯问题"></a>爬楼梯问题</h2><blockquote>
+<p>楼梯的阶数一共为target，一次可以走的步数为nums[i]。一共有多少种走法？</p>
+</blockquote>
+<p>考虑顺序的组合问题：外循环target,内循环nums,应用状态方程3</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">combinationSum4</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> target)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span>[] dp = <span class="keyword">new</span> <span class="keyword">int</span>[target + <span class="number">1</span>];</span><br><span class="line">    dp[<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= target; i++)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; nums.length; j++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(i &gt;= nums[j])&#123;</span><br><span class="line">                dp[i] += dp[i - nums[j]];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> dp[target];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <h2 id="518-零钱兑换-II"><a href="#518-零钱兑换-II" class="headerlink" title="518. 零钱兑换 II"></a><a href="https://leetcode.cn/problems/coin-change-2/">518. 零钱兑换 II</a></h2><blockquote>
 <p>零钱兑换2：任选硬币凑成指定金额,求组合总数</p>
 </blockquote>
@@ -1171,9 +1180,6 @@
 <p>分组0/1背包的组合问题：dp[i][j]表示投掷i个骰子点数和为j的方法数;三层循环：最外层为背包d,然后先遍历target后遍历点数f<br>应用二维拓展的转移方程3：dp[i][j]+=dp[i-1][j-f];</p>
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">numRollsToTarget</span><span class="params">(<span class="keyword">int</span> d, <span class="keyword">int</span> f, <span class="keyword">int</span> target)</span> </span>&#123;</span><br><span class="line">    vector&lt;vector&lt;<span class="keyword">int</span>&gt;&gt; <span class="built_in">dp</span>(d + <span class="number">1</span>, vector&lt;<span class="keyword">int</span>&gt;(target + <span class="number">1</span>, <span class="number">0</span>));</span><br><span class="line">    dp[<span class="number">0</span>][<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= d; i++)</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= target; j++)</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> k = <span class="number">1</span>; k &lt;= f &amp;&amp; j &gt;= k; k++)</span><br><span class="line">                dp[i][j] += dp[i - <span class="number">1</span>][j - k];</span><br><span class="line">    <span class="keyword">return</span> dp[d][target];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<blockquote>
-<p>本文参考资料来自<a href="https://leetcode-cn.com/problems/last-stone-weight-ii/solution/yi-pian-wen-zhang-chi-tou-bei-bao-wen-ti-5lfv/">此处</a></p>
-</blockquote>
 <blockquote>
 <p>位我上者，灿烂星空；道德律令，在我心中。</p>
 </blockquote>

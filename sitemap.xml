@@ -2,15 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://sun-ld.github.io/posts/57827.html</loc>
-    
-    <lastmod>2022-06-23</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://sun-ld.github.io/posts/51190.html</loc>
     
     <lastmod>2022-06-23</lastmod>
@@ -625,13 +616,6 @@
   
   <url>
     <loc>https://sun-ld.github.io/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E9%93%BE%E8%A1%A8/%E9%93%BE%E8%A1%A8%E7%9B%B8%E5%87%8F/</loc>
-    <lastmod>2022-06-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://sun-ld.github.io/categories/%E9%9D%A2%E7%BB%8F/%E6%9A%91%E6%9C%9F%E5%AE%9E%E4%B9%A0/</loc>
     <lastmod>2022-06-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>

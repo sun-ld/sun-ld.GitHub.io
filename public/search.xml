@@ -575,7 +575,7 @@
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function">vector&lt;string&gt; <span class="title">generateParenthesis</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    vector&lt;string&gt; res;</span><br><span class="line">    string cur;</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">dfs</span>(res, cur, n, n);</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(vector&lt;string&gt;&amp; res, string&amp; cur, <span class="keyword">int</span> left, <span class="keyword">int</span> right)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(left&lt;<span class="number">0</span> || right&lt;<span class="number">0</span>) <span class="keyword">return</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span>(right &lt; left) <span class="keyword">return</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span>(left==<span class="number">0</span> &amp;&amp; right==<span class="number">0</span>) &#123;</span><br><span class="line">        res.<span class="built_in">push_back</span>(cur);</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    cur.<span class="built_in">push_back</span>(<span class="string">&#x27;(&#x27;</span>);</span><br><span class="line">    <span class="built_in">dfs</span>(res, cur, left<span class="number">-1</span>, right);</span><br><span class="line">    cur.<span class="built_in">pop_back</span>();</span><br><span class="line">    </span><br><span class="line">    cur.<span class="built_in">push_back</span>(<span class="string">&#x27;)&#x27;</span>);</span><br><span class="line">    <span class="built_in">dfs</span>(res, cur, left, right<span class="number">-1</span>);</span><br><span class="line">    cur.<span class="built_in">pop_back</span>();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h2 id="329-矩阵中的最长递增路径"><a href="#329-矩阵中的最长递增路径" class="headerlink" title="329. 矩阵中的最长递增路径"></a><a href="https://leetcode-cn.com/problems/longest-increasing-path-in-a-matrix/">329. 矩阵中的最长递增路径</a></h2><blockquote>
-<p>给定一个 m x n 整数矩阵 matrix ，找出其中 最长递增路径 的长度。对于每个单元格，你可以往上，下，左，右四个方向移动。 你 不能 在 对角线 方向上移动或移动到 边界外（即不允许环绕）。</p>
+<p>给定一个mxn整数矩阵matrix ，找出其中最长递增路径的长度。</p>
 </blockquote>
 <p>示例 1：</p>
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">输入：matrix = [[<span class="number">9</span>,<span class="number">9</span>,<span class="number">4</span>],[<span class="number">6</span>,<span class="number">6</span>,<span class="number">8</span>],[<span class="number">2</span>,<span class="number">1</span>,<span class="number">1</span>]]</span><br><span class="line">输出：<span class="number">4</span> </span><br><span class="line">解释：最长递增路径为 [<span class="number">1</span>, <span class="number">2</span>, <span class="number">6</span>, <span class="number">9</span>]。</span><br></pre></td></tr></table></figure>
@@ -593,7 +593,7 @@
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">输入：<span class="number">2</span>,<span class="number">2</span></span><br><span class="line">返回值：<span class="number">2</span></span><br></pre></td></tr></table></figure>
 <h3 id="动态规划解法"><a href="#动态规划解法" class="headerlink" title="动态规划解法"></a>动态规划解法</h3><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">uniquePaths</span><span class="params">(<span class="keyword">int</span> m, <span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    vector&lt;vector&lt;<span class="keyword">int</span>&gt; &gt; <span class="built_in">dp</span>(m, vector&lt;<span class="keyword">int</span>&gt;(n, <span class="number">0</span>));</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m; i++)</span><br><span class="line">        dp[i][<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)</span><br><span class="line">        dp[<span class="number">0</span>][i] = <span class="number">1</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; m; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">1</span>; j &lt; n; j++) &#123;</span><br><span class="line">            dp[i][j] = dp[i<span class="number">-1</span>][j] + dp[i][j<span class="number">-1</span>];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> dp[m<span class="number">-1</span>][n<span class="number">-1</span>];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h3 id="dfs-备忘录"><a href="#dfs-备忘录" class="headerlink" title="dfs+备忘录"></a>dfs+备忘录</h3><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> m, <span class="keyword">int</span> n, vector&lt;vector&lt;<span class="keyword">int</span>&gt; &gt;&amp; memo, <span class="keyword">int</span> x, <span class="keyword">int</span> y)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(x==m<span class="number">-1</span> || y==n<span class="number">-1</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span>(memo[x][y]) <span class="keyword">return</span> memo[x][y];</span><br><span class="line">    memo[x][y] = <span class="built_in">dfs</span>(m, n, memo, x+<span class="number">1</span>, y) + <span class="built_in">dfs</span>(m, n, memo, x, y+<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">return</span> memo[x][y];</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">uniquePaths</span><span class="params">(<span class="keyword">int</span> m, <span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    vector&lt;vector&lt;<span class="keyword">int</span>&gt; &gt; <span class="built_in">memo</span>(m, vector&lt;<span class="keyword">int</span>&gt;(n, <span class="number">0</span>));</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">dfs</span>(m, n, memo, <span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="dfs-备忘录"><a href="#dfs-备忘录" class="headerlink" title="dfs+备忘录"></a>dfs+备忘录</h3><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> m, <span class="keyword">int</span> n, vector&lt;vector&lt;<span class="keyword">int</span>&gt; &gt;&amp; memo, <span class="keyword">int</span> x, <span class="keyword">int</span> y)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(x==m<span class="number">-1</span> || y==n<span class="number">-1</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span>(memo[x][y]) <span class="keyword">return</span> memo[x][y];</span><br><span class="line">    memo[x][y] = <span class="built_in">dfs</span>(m, n, memo, x+<span class="number">1</span>, y) + <span class="built_in">dfs</span>(m, n, memo, x, y+<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">return</span> memo[x][y];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">uniquePaths</span><span class="params">(<span class="keyword">int</span> m, <span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    vector&lt;vector&lt;<span class="keyword">int</span>&gt; &gt; <span class="built_in">memo</span>(m, vector&lt;<span class="keyword">int</span>&gt;(n, <span class="number">0</span>));</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">dfs</span>(m, n, memo, <span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <blockquote>
 <p>位我上者，灿烂星空；道德律令，在我心中。</p>
@@ -1483,6 +1483,92 @@
       </categories>
       <tags>
         <tag>动态规划</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>壬寅年暑期实习面试心酸历程</title>
+    <url>/posts/57827.html</url>
+    <content><![CDATA[<blockquote>
+<p><strong>【道德经·第三十四章】</strong>大道汜兮，其可左右。万物恃之以生而不辞，功成而不有。衣养万物而不为主，常无欲，可名于小；万物归焉而不为主，可名为大。以其终不自为大，故能成其大。</p>
+</blockquote>
+<span id="more"></span>
+
+<h2 id="《序》"><a href="#《序》" class="headerlink" title="《序》"></a>《序》</h2><h3 id="《游褒禅山记》"><a href="#《游褒禅山记》" class="headerlink" title="《游褒禅山记》"></a>《游褒禅山记》</h3><p>王安石</p>
+<blockquote>
+<p>世之奇伟、瑰怪，非常之观，常在于险远，而人之所罕至焉，故非有志者不能至也。有志矣，不随以止也，然力不足者，亦不能至也。有志与力，而又不随以怠，至于幽暗昏惑而无物以相之，亦不能至也。然力足以至焉，于人为可讥，而在己为有悔；尽吾志也而不能至者，可以无悔矣，其孰能讥之乎？此余之所得也。                   </p>
+</blockquote>
+<p>按照时间线记录一下今年的暑期实习面试历程（记性实在太差，只记面试中答得不好或印象深刻的）：</p>
+<h2 id="面试记录"><a href="#面试记录" class="headerlink" title="面试记录"></a>面试记录</h2><h3 id="微软CSS："><a href="#微软CSS：" class="headerlink" title="微软CSS："></a>微软CSS：</h3><ul>
+<li>03/05一二面</li>
+<li>03/07三面挂：英语口语交流。（膜同实验室王巨佬，当时已经拿下CSS）</li>
+</ul>
+<h3 id="阿里云："><a href="#阿里云：" class="headerlink" title="阿里云："></a>阿里云：</h3><ul>
+<li>03/19一面</li>
+<li>03/23二面：手写socket，多进程，多线程。</li>
+<li>03/25三面：发散性聊天，项目介绍，http优化。</li>
+<li>03/29HR面挂</li>
+</ul>
+<h3 id="远景："><a href="#远景：" class="headerlink" title="远景："></a>远景：</h3><ul>
+<li>03/22一面</li>
+<li>04/02二面挂：设计模式，redis没答好。</li>
+</ul>
+<h3 id="蚂蚁："><a href="#蚂蚁：" class="headerlink" title="蚂蚁："></a>蚂蚁：</h3><ul>
+<li>04/10一面</li>
+<li>04/10二面：文章相似度检测，项目相关方面不熟。</li>
+<li>04/14三面挂：B+树，TCP可靠性，自己认为自己是一个怎样的人。</li>
+</ul>
+<h3 id="字节："><a href="#字节：" class="headerlink" title="字节："></a>字节：</h3><ul>
+<li>04/15一面：抛硬币问题，MapReduce，算法题卡了。</li>
+<li>04/22二面挂：Redis缓存击穿、雪崩，算法题写了大致思路。</li>
+</ul>
+<h3 id="百度："><a href="#百度：" class="headerlink" title="百度："></a>百度：</h3><ul>
+<li>04/16一二三面（等待中）：零拷贝技术，C++智能指针，map、unordered_map线程安全。</li>
+<li>然后等到花儿都谢了。。</li>
+</ul>
+<h3 id="FreeWheel："><a href="#FreeWheel：" class="headerlink" title="FreeWheel："></a>FreeWheel：</h3><ul>
+<li>04/25一面：C++实现智能指针。</li>
+<li>04/25二面（挂？）：gdb多线程调试。</li>
+</ul>
+<h3 id="盛趣游戏："><a href="#盛趣游戏：" class="headerlink" title="盛趣游戏："></a>盛趣游戏：</h3><ul>
+<li>05/31一面：C++基础，项目，行业现状，职业规划（面试官人挺好，讲了很多心得体会，给了一些建议）。</li>
+<li>06/06hr面：薪资250/天+700餐补（拒了。。）。</li>
+</ul>
+<h3 id="万得："><a href="#万得：" class="headerlink" title="万得："></a>万得：</h3><ul>
+<li>06/08一面：面试官技术栈java，问了一大堆java，我说我不会，您可以问点C++。。继续问java。。。问了20分钟突然说走错房间了。。。</li>
+</ul>
+<h3 id="博世："><a href="#博世：" class="headerlink" title="博世："></a>博世：</h3><ul>
+<li>06/10一面(自动驾驶平台开发）：英文自我介绍，C++基础，Linux相关，八股。</li>
+<li>06/13二面(基础软件研发/车载雷达)：英文自我介绍，项目，八股，聊天。。面完没感觉，当时也没想着拿offer，就是去练手的。。</li>
+<li>06/14给offer了。</li>
+</ul>
+<h3 id="Cadence："><a href="#Cadence：" class="headerlink" title="Cadence："></a>Cadence：</h3><ul>
+<li>06/16一面，英文自我介绍，英文聊天（中途换中文，别问我为什么。。。)，后面问了项目，对Cadence的印象，发散性聊天。</li>
+<li>06/22 本来以为都无了，中午打电话意向了！！！人生前两个offer都是外企。。。辣鸡互联网！！</li>
+</ul>
+<h3 id="字节（日常实习）："><a href="#字节（日常实习）：" class="headerlink" title="字节（日常实习）："></a>字节（日常实习）：</h3><ul>
+<li>06/14一面：线程池答得不好。</li>
+<li>06/17二面</li>
+<li>06/22三面</li>
+<li>06/23感谢信：这次字节三面编程题都写出来了，八股答得不很好，，暂时和互联网大厂无缘了，提前批秋招再战吧！</li>
+</ul>
+<h2 id="《后记》"><a href="#《后记》" class="headerlink" title="《后记》"></a>《后记》</h2><p>《忆秦娥·娄山关》<br>毛泽东</p>
+<blockquote>
+<p>西风烈，长空雁叫霜晨月。霜晨月，马蹄声碎，喇叭声咽。雄关漫道真如铁，而今迈步从头越。从头越，苍山如海，残阳如血。</p>
+</blockquote>
+<p>《定风波·莫听穿林打叶声》<br>苏轼</p>
+<blockquote>
+<p>莫听穿林打叶声，何妨吟啸且徐行。竹杖芒鞋轻胜马，谁怕？一蓑烟雨任平生。料峭春风吹酒醒，微冷，山头斜照却相迎。回首向来萧瑟处，归去，也无风雨也无晴。</p>
+</blockquote>
+<blockquote>
+<p>位我上者，灿烂星空；道德律令，在我心中。</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>面经</category>
+        <category>暑期实习</category>
+      </categories>
+      <tags>
+        <tag>面经</tag>
       </tags>
   </entry>
 </search>

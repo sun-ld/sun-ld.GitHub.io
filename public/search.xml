@@ -786,7 +786,7 @@
       </tags>
   </entry>
   <entry>
-    <title>K-th</title>
+    <title>topk问题</title>
     <url>/posts/41946.html</url>
     <content><![CDATA[<blockquote>
 <p><strong>【道德经·第二十二章】</strong>曲则全，枉则直，洼则盈，敝则新，少则得，多则惑。是以圣人抱一为天下式。不自见，故明；不自是，故彰，不自伐，故有功；不自矜，故长。</p>
@@ -811,7 +811,7 @@
 ]]></content>
       <categories>
         <category>算法</category>
-        <category>K-th</category>
+        <category>topk</category>
       </categories>
       <tags>
         <tag>算法</tag>

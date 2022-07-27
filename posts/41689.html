@@ -20,20 +20,20 @@
     var CONFIG = {"hostname":"sun-ld.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"./public/search.xml"};
   </script>
 
-  <meta name="description" content="【道德经·第三十四章】大道汜兮，其可左右。万物恃之以生而不辞，功成而不有。衣养万物而不为主，常无欲，可名于小；万物归焉而不为主，可名为大。以其终不自为大，故能成其大。">
+  <meta name="description" content="【道德经·第三十七章】将欲歙之，必固张之；将欲弱之，必固强之；将欲废之，必固兴之；将欲取之，必固与之。是谓微明，柔弱胜刚强。鱼不可脱于渊，国之利器不可以示人。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="矩阵中的最长递增路径">
-<meta property="og:url" content="https://sun-ld.github.io/posts/31989.html">
+<meta property="og:title" content="滑动窗口最大值">
+<meta property="og:url" content="https://sun-ld.github.io/posts/41689.html">
 <meta property="og:site_name" content="仰望星空">
-<meta property="og:description" content="【道德经·第三十四章】大道汜兮，其可左右。万物恃之以生而不辞，功成而不有。衣养万物而不为主，常无欲，可名于小；万物归焉而不为主，可名为大。以其终不自为大，故能成其大。">
+<meta property="og:description" content="【道德经·第三十七章】将欲歙之，必固张之；将欲弱之，必固强之；将欲废之，必固兴之；将欲取之，必固与之。是谓微明，柔弱胜刚强。鱼不可脱于渊，国之利器不可以示人。">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-06-03T06:32:29.000Z">
-<meta property="article:modified_time" content="2022-07-27T07:30:21.898Z">
+<meta property="article:published_time" content="2022-07-08T06:32:29.000Z">
+<meta property="article:modified_time" content="2022-07-27T07:30:21.908Z">
 <meta property="article:author" content="仰望星空">
 <meta property="article:tag" content="算法">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://sun-ld.github.io/posts/31989.html">
+<link rel="canonical" href="https://sun-ld.github.io/posts/41689.html">
 
 
 <script id="page-configurations">
@@ -46,7 +46,7 @@
   };
 </script>
 
-  <title>矩阵中的最长递增路径 | 仰望星空</title>
+  <title>滑动窗口最大值 | 仰望星空</title>
   
 
 
@@ -200,7 +200,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://sun-ld.github.io/posts/31989.html">
+    <link itemprop="mainEntityOfPage" href="https://sun-ld.github.io/posts/41689.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
@@ -213,7 +213,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          矩阵中的最长递增路径
+          滑动窗口最大值
         </h1>
 
         <div class="post-meta">
@@ -223,7 +223,7 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2022-06-03 14:32:29" itemprop="dateCreated datePublished" datetime="2022-06-03T14:32:29+08:00">2022-06-03</time>
+              <time title="创建时间：2022-07-08 14:32:29" itemprop="dateCreated datePublished" datetime="2022-07-08T14:32:29+08:00">2022-07-08</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
@@ -242,7 +242,7 @@
                 </span>
                   ，
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%AE%97%E6%B3%95/%E5%9B%9E%E6%BA%AF/" itemprop="url" rel="index"><span itemprop="name">回溯</span></a>
+                  <a href="/categories/%E7%AE%97%E6%B3%95/%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3/" itemprop="url" rel="index"><span itemprop="name">滑动窗口</span></a>
                 </span>
             </span>
 
@@ -252,7 +252,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>1.1k</span>
+              <span>1.2k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -272,14 +272,19 @@
 
       
         <blockquote>
-<p><strong>【道德经·第三十四章】</strong>大道汜兮，其可左右。万物恃之以生而不辞，功成而不有。衣养万物而不为主，常无欲，可名于小；万物归焉而不为主，可名为大。以其终不自为大，故能成其大。</p>
+<p><strong>【道德经·第三十七章】</strong>将欲歙之，必固张之；将欲弱之，必固强之；将欲废之，必固兴之；将欲取之，必固与之。是谓微明，柔弱胜刚强。鱼不可脱于渊，国之利器不可以示人。</p>
 </blockquote>
 <span id="more"></span>
 
-<h2 id="329-矩阵中的最长递增路径"><a href="#329-矩阵中的最长递增路径" class="headerlink" title="329. 矩阵中的最长递增路径"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/longest-increasing-path-in-a-matrix/">329. 矩阵中的最长递增路径</a></h2><blockquote>
-<p>给定一个 m x n 整数矩阵 matrix ，找出其中 最长递增路径 的长度。</p>
+<h2 id="剑指-Offer-II-041-滑动窗口的平均值"><a href="#剑指-Offer-II-041-滑动窗口的平均值" class="headerlink" title="剑指 Offer II 041. 滑动窗口的平均值"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/qIsx9U/">剑指 Offer II 041. 滑动窗口的平均值</a></h2><blockquote>
+<p>给定一个整数数据流和一个窗口大小，计算滑动窗口里所有数字的平均值。</p>
 </blockquote>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> dirs[<span class="number">4</span>][<span class="number">2</span>] = &#123;&#123;<span class="number">-1</span>, <span class="number">0</span>&#125;, &#123;<span class="number">1</span>, <span class="number">0</span>&#125;, &#123;<span class="number">0</span>, <span class="number">-1</span>&#125;, &#123;<span class="number">0</span>, <span class="number">1</span>&#125;&#125;;</span><br><span class="line"><span class="keyword">int</span> m = <span class="number">0</span>, n = <span class="number">0</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">longestIncreasingPath</span><span class="params">(vector&lt;vector&lt;<span class="keyword">int</span>&gt;&gt;&amp; matrix)</span> </span>&#123;</span><br><span class="line">    m = matrix.<span class="built_in">size</span>();</span><br><span class="line">    n = matrix[<span class="number">0</span>].<span class="built_in">size</span>();</span><br><span class="line">    </span><br><span class="line">    vector&lt;vector&lt;<span class="keyword">int</span>&gt; &gt; <span class="built_in">dp</span>(m, vector&lt;<span class="keyword">int</span>&gt;(n, <span class="number">0</span>));</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; n; j++) &#123;</span><br><span class="line">            ans = <span class="built_in">max</span>(ans, <span class="built_in">dfs</span>(matrix, i, j, dp));</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">dfs</span><span class="params">(vector&lt;vector&lt;<span class="keyword">int</span>&gt; &gt;&amp; matrix, <span class="keyword">int</span> i, <span class="keyword">int</span> j, vector&lt;vector&lt;<span class="keyword">int</span>&gt; &gt;&amp; dp)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(dp[i][j] != <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> dp[i][j];</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    dp[i][j]++;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> k = <span class="number">0</span>; k &lt; <span class="number">4</span>; k++) &#123;</span><br><span class="line">        <span class="keyword">int</span> nexti = i+dirs[k][<span class="number">0</span>];</span><br><span class="line">        <span class="keyword">int</span> nextj = j+dirs[k][<span class="number">1</span>];</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span>(nexti&gt;=<span class="number">0</span> &amp;&amp; nexti&lt;m &amp;&amp; nextj&gt;=<span class="number">0</span> &amp;&amp; nextj&lt;n &amp;&amp; matrix[nexti][nextj]&gt;matrix[i][j]) &#123;</span><br><span class="line">            dp[i][j] = <span class="built_in">max</span>(dp[i][j], <span class="built_in">dfs</span>(matrix, nexti, nextj, dp)+<span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> dp[i][j];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MovingAverage</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="comment">/** Initialize your data structure here. */</span></span><br><span class="line">    <span class="built_in">MovingAverage</span>(<span class="keyword">int</span> size) &#123;</span><br><span class="line">        sz = size;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">double</span> <span class="title">next</span><span class="params">(<span class="keyword">int</span> val)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(dq.<span class="built_in">size</span>() == sz) &#123;</span><br><span class="line">            sum -= dq.<span class="built_in">front</span>();</span><br><span class="line">            dq.<span class="built_in">pop_front</span>();</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        sum += val;</span><br><span class="line">        dq.<span class="built_in">push_back</span>(val);</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> sum/dq.<span class="built_in">size</span>();</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="keyword">int</span> sz = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">double</span> sum = <span class="number">0</span>;</span><br><span class="line">    deque&lt;<span class="keyword">double</span>&gt; dq;</span><br><span class="line">    </span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Your MovingAverage object will be instantiated and called as such:</span></span><br><span class="line"><span class="comment"> * MovingAverage* obj = new MovingAverage(size);</span></span><br><span class="line"><span class="comment"> * double param_1 = obj-&gt;next(val);</span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="239-滑动窗口最大值"><a href="#239-滑动窗口最大值" class="headerlink" title="239. 滑动窗口最大值"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/sliding-window-maximum/">239. 滑动窗口最大值</a></h2><blockquote>
+<p>求滑动窗口最大值</p>
+</blockquote>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">vector&lt;<span class="keyword">int</span>&gt; <span class="title">maxSlidingWindow</span><span class="params">(vector&lt;<span class="keyword">int</span>&gt;&amp; nums, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">        vector&lt;<span class="keyword">int</span>&gt; res;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> n = nums.<span class="built_in">size</span>();</span><br><span class="line">        <span class="keyword">if</span>(n&lt;k || k&lt;<span class="number">1</span>) <span class="keyword">return</span> res;</span><br><span class="line"></span><br><span class="line">        deque&lt;<span class="keyword">int</span>&gt; dq;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">            <span class="keyword">while</span>(!dq.<span class="built_in">empty</span>() &amp;&amp; nums[dq.<span class="built_in">back</span>()]&lt;nums[i]) &#123;</span><br><span class="line">                dq.<span class="built_in">pop_back</span>();</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            dq.<span class="built_in">push_back</span>(i);</span><br><span class="line">            <span class="keyword">if</span>(dq.<span class="built_in">front</span>()+k == i) &#123;</span><br><span class="line">                dq.<span class="built_in">pop_front</span>();</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span>(i &gt;= k<span class="number">-1</span>) &#123;</span><br><span class="line">                res.<span class="built_in">push_back</span>(nums[dq.<span class="built_in">front</span>()]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
 <blockquote>
 <p>位我上者，灿烂星空；道德律令，在我心中。</p>
@@ -299,7 +304,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://sun-ld.github.io/posts/31989.html" title="矩阵中的最长递增路径">https://sun-ld.github.io/posts/31989.html</a>
+    <a href="https://sun-ld.github.io/posts/41689.html" title="滑动窗口最大值">https://sun-ld.github.io/posts/41689.html</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -319,12 +324,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/posts/7294.html" rel="prev" title="股票买卖问题">
-      <i class="fa fa-chevron-left"></i> 股票买卖问题
+    <a href="/posts/37262.html" rel="prev" title="N皇后问题">
+      <i class="fa fa-chevron-left"></i> N皇后问题
     </a></div>
       <div class="post-nav-item">
-    <a href="/posts/49159.html" rel="next" title="排列组合问题">
-      排列组合问题 <i class="fa fa-chevron-right"></i>
+    <a href="/posts/9554.html" rel="next" title="接雨水问题">
+      接雨水问题 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -384,7 +389,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#329-%E7%9F%A9%E9%98%B5%E4%B8%AD%E7%9A%84%E6%9C%80%E9%95%BF%E9%80%92%E5%A2%9E%E8%B7%AF%E5%BE%84"><span class="nav-number">1.</span> <span class="nav-text">329. 矩阵中的最长递增路径</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%91%E6%8C%87-Offer-II-041-%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3%E7%9A%84%E5%B9%B3%E5%9D%87%E5%80%BC"><span class="nav-number">1.</span> <span class="nav-text">剑指 Offer II 041. 滑动窗口的平均值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#239-%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3%E6%9C%80%E5%A4%A7%E5%80%BC"><span class="nav-number">2.</span> <span class="nav-text">239. 滑动窗口最大值</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 

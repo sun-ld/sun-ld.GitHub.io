@@ -1609,7 +1609,7 @@
     <title>滑动窗口最大值</title>
     <url>/posts/41689.html</url>
     <content><![CDATA[<blockquote>
-<p><strong>【道德经·第三十七章】</strong>将欲歙之，必固张之；将欲弱之，必固强之；将欲废之，必固兴之；将欲取之，必固与之。是谓微明，柔弱胜刚强。鱼不可脱于渊，国之利器不可以示人。</p>
+<p><strong>【道德经·第三十七章】</strong>道常无为而无不为。候王若能守之，万物将自化。化而欲作，吾将镇之以无名之朴，镇之以无名之朴，夫将不欲。不欲以静，天下将自定。</p>
 </blockquote>
 <span id="more"></span>
 
@@ -1639,7 +1639,7 @@
     <title>接雨水问题</title>
     <url>/posts/9554.html</url>
     <content><![CDATA[<blockquote>
-<p><strong>【道德经·第三十八章】</strong>上德不德，是以有德；下德不失德，是以无德。上德无为而无以为；下德无为而有以为。上仁为之而无以为；上义为之而有以为。</p>
+<p><strong>【道德经·第三十八章】</strong>上德不德，是以有德；下德不失德，是以无德。上德无为而无以为；下德无为而有以为。上仁为之而无以为；上义为之而有以为。上礼为之而莫之应，则攘臂而扔之。</p>
 </blockquote>
 <span id="more"></span>
 
@@ -1658,6 +1658,29 @@
       </categories>
       <tags>
         <tag>算法</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>二叉树公共祖先问题</title>
+    <url>/posts/53911.html</url>
+    <content><![CDATA[<blockquote>
+<p><strong>【道德经·第三十八章】</strong>故失道而后德，失德面后仁，失仁而后义，失义而后礼。夫礼者，忠信之薄，而乱之首。前识者，道之华，而愚之始。</p>
+</blockquote>
+<h2 id="236-二叉树的最近公共祖先"><a href="#236-二叉树的最近公共祖先" class="headerlink" title="236. 二叉树的最近公共祖先"></a><a href="https://leetcode.cn/problems/lowest-common-ancestor-of-a-binary-tree/">236. 二叉树的最近公共祖先</a></h2><blockquote>
+<p>给定一个二叉树, 找到该树中两个指定节点的最近公共祖先。</p>
+</blockquote>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">TreeNode* <span class="title">lowestCommonAncestor</span><span class="params">(TreeNode* root, TreeNode* p, TreeNode* q)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!root) <span class="keyword">return</span> <span class="literal">nullptr</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span>(root==p || root==q) &#123;</span><br><span class="line">            <span class="keyword">return</span> root;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        TreeNode *l = <span class="built_in">lowestCommonAncestor</span>(root-&gt;left, p, q);</span><br><span class="line">        TreeNode *r = <span class="built_in">lowestCommonAncestor</span>(root-&gt;right, p, q);</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span>(l &amp;&amp; r) &#123;</span><br><span class="line">            <span class="keyword">return</span> root;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span>(!l &amp;&amp; !r) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">nullptr</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> l==<span class="literal">nullptr</span> ? r : l;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h2 id="235-二叉搜索树的最近公共祖先"><a href="#235-二叉搜索树的最近公共祖先" class="headerlink" title="235. 二叉搜索树的最近公共祖先"></a><a href="https://leetcode.cn/problems/er-cha-sou-suo-shu-de-zui-jin-gong-gong-zu-xian-lcof/">235. 二叉搜索树的最近公共祖先</a></h2><blockquote>
+<p>给定一个二叉搜索树, 找到该树中两个指定节点的最近公共祖先。</p>
+</blockquote>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">TreeNode* <span class="title">lowestCommonAncestor</span><span class="params">(TreeNode* root, TreeNode* p, TreeNode* q)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!root) <span class="keyword">return</span> root;</span><br><span class="line">        </span><br><span class="line">        TreeNode *cur = root;</span><br><span class="line">        <span class="keyword">while</span>(cur) &#123;</span><br><span class="line">            <span class="keyword">if</span>(cur-&gt;val&gt;p-&gt;val &amp;&amp; cur-&gt;val&gt;q-&gt;val) &#123;</span><br><span class="line">                cur = cur-&gt;left;</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span>(cur-&gt;val&lt;p-&gt;val &amp;&amp; cur-&gt;val&lt;q-&gt;val) &#123;</span><br><span class="line">                cur = cur-&gt;right;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> cur;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>数据结构</category>
+        <category>二叉树</category>
+      </categories>
+      <tags>
+        <tag>数据结构</tag>
       </tags>
   </entry>
 </search>
